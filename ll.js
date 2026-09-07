@@ -103,7 +103,7 @@
     }
   };
 
-  // ── GitHub Cloud ──────────────────────────────────────────────────────
+  // ── GitHub Cloud (Зберігає як власні списки, так і стандартні закладки Lampa) ──
   var Cloud = {
     checkAuth: function () {
       var token = (Lampa.Storage.get(GIST_TOKEN_KEY, '') || '').trim();
@@ -135,7 +135,16 @@
 
       var _this = this;
       Lampa.Loading.start();
-      var data = { files: { 'lampa_local_lists.json': { content: JSON.stringify(Lists.getAll()) } } };
+
+      var listsData = Lists.getAll();
+      var nativeFavorite = Lampa.Storage.get('favorite', {});
+
+      var data = { 
+        files: { 
+          'lampa_local_lists.json': { content: JSON.stringify(listsData) },
+          'lampa_native_favorite.json': { content: JSON.stringify(nativeFavorite) }
+        } 
+      };
       var id = Lampa.Storage.get(GIST_ID_KEY, '');
 
       this.request(id ? 'PATCH' : 'POST', id ? 'https://api.github.com/gists/'+id : 'https://api.github.com/gists', data, function(res){
@@ -167,18 +176,38 @@
       }
 
       this.request('GET', 'https://api.github.com/gists/'+id, null, function(res){
-        var parsed;
-        try { parsed = JSON.parse(res.files['lampa_local_lists.json'].content); } catch (e) { parsed = null; }
-        if (!Array.isArray(parsed)) {
-          Lampa.Loading.stop();
-          Lampa.Noty.show('Invalid backup data');
-          return;
+        var restoredAny = false;
+
+        // Відновлюємо списки
+        if (res.files && res.files['lampa_local_lists.json']) {
+          try {
+            var parsedLists = JSON.parse(res.files['lampa_local_lists.json'].content);
+            if (Array.isArray(parsedLists)) {
+              Lists.save(parsedLists);
+              restoredAny = true;
+            }
+          } catch (e) {}
         }
-        Lists.save(parsed);
+
+        // Відновлюємо стандартні закладки Lampa
+        if (res.files && res.files['lampa_native_favorite.json']) {
+          try {
+            var parsedFav = JSON.parse(res.files['lampa_native_favorite.json'].content);
+            if (parsedFav && typeof parsedFav === 'object') {
+              Lampa.Storage.set('favorite', parsedFav);
+              restoredAny = true;
+            }
+          } catch (e) {}
+        }
+
         Lampa.Loading.stop();
-        Lampa.Noty.show('Restored');
-        if (Lampa.Activity.active().component === 'bookmarks' || Lampa.Activity.active().component === 'local_lists_root') {
-          Lampa.Activity.replace();
+        if (restoredAny) {
+          Lampa.Noty.show('Restored');
+          if (Lampa.Activity.active().component === 'bookmarks' || Lampa.Activity.active().component === 'local_lists_root') {
+            Lampa.Activity.replace();
+          }
+        } else {
+          Lampa.Noty.show('Invalid backup data');
         }
       });
     }
@@ -786,7 +815,7 @@
         '.local-lists-root__title{margin-top:0.6em;font-size:1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}' +
         '.local-lists-root__card.focus .local-lists-root__poster{border-color:#fff;}' +
 
-        /* Картка створення списку (+) — виправлені пропорції та позиціонування */
+        /* Картка створення списку (+) */
         '.local-lists-card-add .card__view{' +
           'position:relative !important;' +
           'background:rgba(255,255,255,0.06) !important;' +
