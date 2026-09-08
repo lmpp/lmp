@@ -12,8 +12,10 @@
   var ICON_SETTINGS = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
   var ICON_KEY = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
   var ICON_CLOUD_UP = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 13v6"/><path d="m15 16-3-3-3 3"/></svg>';
+  var ICON_CLOUD_OVERWRITE = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
   var ICON_CLOUD_DOWN = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 19v-6"/><path d="m9 16 3 3 3-3"/></svg>';
   var ICON_IMPORT = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+  var ICON_STAR_SVG = '<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6162 7.10981L15.8464 7.55198L16.3381 7.63428L22.2841 8.62965C22.8678 8.72736 23.0999 9.44167 22.6851 9.86381L18.4598 14.1641L18.1104 14.5196L18.184 15.0127L19.0748 20.9752C19.1622 21.5606 18.5546 22.002 18.025 21.738L12.6295 19.0483L12.1833 18.8259L11.7372 19.0483L6.34171 21.738C5.81206 22.002 5.20443 21.5606 5.29187 20.9752L6.18264 15.0127L6.25629 14.5196L5.9069 14.1641L1.68155 9.86381C1.26677 9.44167 1.49886 8.72736 2.08255 8.62965L8.02855 7.63428L8.52022 7.55198L8.75043 7.10981L11.5345 1.76241C11.8078 1.23748 12.5589 1.23748 12.8322 1.76241L15.6162 7.10981Z" stroke="currentColor" stroke-width="2.2"></path></svg>';
 
   function addLang() {
     if (!Lampa.Lang || !Lampa.Lang.add) return;
@@ -29,6 +31,9 @@
         en: 'Authorization required first (specify GitHub Token)' 
       },
       local_lists_cloud_backup: { uk: 'Синхронізувати з хмарою (списки + вибране)', ru: 'Синхронизировать с облаком (списки + избранное)', en: 'Sync with Cloud (lists + favorites)' },
+      local_lists_cloud_overwrite: { uk: 'Перезаписати списки в хмарі', ru: 'Перезаписать списки в облаке', en: 'Overwrite lists in Cloud' },
+      local_lists_cloud_overwrite_confirm: { uk: 'Перезаписати хмару поточними списками?', ru: 'Перезаписать облако текущими списками?', en: 'Overwrite cloud with current lists?' },
+      local_lists_cloud_overwritten: { uk: 'Дані в хмарі успішно перезаписано', ru: 'Данные в облаке успешно перезаписаны', en: 'Cloud data successfully overwritten' },
       local_lists_cloud_restore: { uk: 'Відновити з хмари', ru: 'Восстановить из облака', en: 'Restore from Cloud' },
       local_lists_create: { uk: 'Створити список', ru: 'Создать список', en: 'Create list' },
       local_lists_new_name: { uk: 'Назва списку', ru: 'Название списка', en: 'List name' },
@@ -57,6 +62,10 @@
       .replace(/'/g, '&#39;');
   }
 
+  function isPerson(data) {
+    return !!data && !!(data.profile_path || data.known_for_department || typeof data.gender !== 'undefined');
+  }
+
   function resolvePoster(path) {
     if (!path) return './img/img_broken.svg';
     if (path.indexOf('http') === 0) return path;
@@ -79,31 +88,103 @@
   var Lists = {
     getAll: function () { return Lampa.Storage.get(STORAGE_KEY, []); },
     save: function (l) { Lampa.Storage.set(STORAGE_KEY, l); },
-    get: function (id) { return this.getAll().filter(function(l){return l.id === id})[0]; },
+    get: function (id) { return this.getAll().filter(function(l){ return l.id === id; })[0]; },
     create: function (name) {
       var l = this.getAll();
       var newList = { id: 'list_' + Date.now(), name: name, items: [] };
       l.push(newList); this.save(l); return newList;
     },
-    remove: function (id) { this.save(this.getAll().filter(function(l){return l.id !== id})); },
+    remove: function (id) { 
+      this.save(this.getAll().filter(function(l){ return l.id !== id; })); 
+    },
     addItem: function (listId, card) {
+      if (!card || card.id == null) return;
       var l = this.getAll();
-      var list = l.filter(function(i){return i.id === listId})[0];
+      var list = l.filter(function(i){ return i.id === listId; })[0];
       if (!list) return;
       var n = normalizeCard(card);
-      if (list.items.some(function(i){return i.id == n.id})) return;
-      list.items.push(n); this.save(l);
+      if (list.items.some(function(i){ return String(i.id) === String(n.id); })) return;
+      list.items.push(n); 
+      this.save(l);
     },
     removeItem: function (listId, itemId) {
+      if (itemId == null) return;
       var l = this.getAll();
-      var list = l.filter(function(i){return i.id === listId})[0];
+      var list = l.filter(function(i){ return i.id === listId; })[0];
       if (!list) return;
-      list.items = list.items.filter(function(i){return i.id != itemId});
+      list.items = list.items.filter(function(i){ return String(i.id) !== String(itemId); });
       this.save(l);
+    },
+    isCardInAny: function (id) {
+      if (id == null) return false;
+      var all = this.getAll();
+      for (var i = 0; i < all.length; i++) {
+        if (all[i].items && all[i].items.some(function (it) { return String(it.id) === String(id); })) {
+          return true;
+        }
+      }
+      return false;
     }
   };
 
-  // ── Утиліти злиття даних (Smart Merge) ──
+  function refreshCardIcon(object) {
+    if (!object || !object.card || !object.data || isPerson(object.data)) return;
+    var $iconHolder = $('.card__icons-inner', object.card);
+    if (!$iconHolder.length) return;
+
+    var id = object.data.id;
+    var inList = Lists.isCardInAny(id);
+
+    var $starIcon = $('.icon--star', $iconHolder);
+    var hasIcon = $starIcon.length !== 0;
+    var hasHiddenIcon = hasIcon && $starIcon.hasClass('hide');
+
+    if (inList) {
+      if (!hasIcon) {
+        $iconHolder.prepend(Lampa.Template.get('local-lists-star-icon'));
+      } else if (hasHiddenIcon) {
+        $starIcon.removeClass('hide');
+      }
+    } else {
+      if (hasIcon && !hasHiddenIcon) {
+        $starIcon.addClass('hide');
+      }
+    }
+  }
+
+  function getActiveCard() {
+    var active = Lampa.Activity.active();
+    if (active) {
+      if (active.card) return active.card;
+      if (active.activity && active.activity.card) return active.activity.card;
+    }
+    return null;
+  }
+
+  function refreshBookmarkIcon() {
+    var card = getActiveCard();
+    if (!card) return;
+
+    var inList = Lists.isCardInAny(card.id);
+    var favStates = inList ? {} : (Lampa.Favorite ? Lampa.Favorite.check(card) : {});
+    var anyFavorite = inList || Object.keys(favStates).filter(function (favType) {
+      return favType !== 'history' && favType !== 'any';
+    }).some(function (favType) {
+      return !!favStates[favType];
+    });
+
+    var active = Lampa.Activity.active();
+    if (active && active.activity) {
+      var $svg = $(".button--book svg path", active.activity.render());
+      if (anyFavorite) {
+        $svg.attr('fill', 'currentColor');
+      } else {
+        $svg.attr('fill', 'transparent');
+      }
+    }
+  }
+
+  // ── Smart Merge ───────────────────────────────────────────────────────
   function mergeCardItems(localItems, remoteItems) {
     localItems = Array.isArray(localItems) ? localItems : [];
     remoteItems = Array.isArray(remoteItems) ? remoteItems : [];
@@ -200,7 +281,7 @@
     return merged;
   }
 
-  // ── GitHub Cloud з інтелектуальним злиттям ──
+  // ── GitHub Cloud ───────────────────────────────────────────────────────
   var Cloud = {
     checkAuth: function () {
       var token = (Lampa.Storage.get(GIST_TOKEN_KEY, '') || '').trim();
@@ -295,11 +376,9 @@
           }
         }
 
-        // Об'єднуємо хмарний та локальний стани без втрати даних
         var mergedLists = mergeLists(Lists.getAll(), remoteLists);
         var mergedFav = mergeFavorites(Lampa.Storage.get('favorite', {}), remoteFav);
 
-        // Зберігаємо об'єднаний актуальний результат локально
         Lists.save(mergedLists);
         Lampa.Storage.set('favorite', mergedFav);
 
@@ -328,6 +407,56 @@
             }
           }
         );
+      });
+    },
+
+    overwrite: function () {
+      if (!this.checkAuth()) return;
+
+      var _this = this;
+      var curController = (Lampa.Controller.enabled && Lampa.Controller.enabled()) ? Lampa.Controller.enabled().name : 'settings';
+
+      Lampa.Select.show({
+        title: tr('local_lists_cloud_overwrite_confirm'),
+        items: [
+          { title: (Lampa.Lang && Lampa.Lang.translate('settings_param_yes')) || 'Так', id: 'yes' },
+          { title: (Lampa.Lang && Lampa.Lang.translate('settings_param_no')) || 'Ні', id: 'no' }
+        ],
+        onSelect: function (a) {
+          if (a.id === 'yes') {
+            Lampa.Loading.start();
+
+            var currentLists = Lists.getAll();
+            var currentFav = Lampa.Storage.get('favorite', {});
+
+            var data = {
+              description: 'Lampa Local Lists & Favorites Sync',
+              files: {
+                'lampa_local_lists.json': { content: JSON.stringify(currentLists, null, 2) },
+                'lampa_native_favorite.json': { content: JSON.stringify(currentFav, null, 2) }
+              }
+            };
+
+            _this.getGist(function (gist) {
+              var gistId = gist ? gist.id : Lampa.Storage.get(GIST_ID_KEY, '');
+
+              _this.request(
+                gistId ? 'PATCH' : 'POST',
+                gistId ? 'https://api.github.com/gists/' + gistId : 'https://api.github.com/gists',
+                data,
+                function (res) {
+                  Lampa.Storage.set(GIST_ID_KEY, res.id);
+                  Lampa.Loading.stop();
+                  Lampa.Noty.show(tr('local_lists_cloud_overwritten'));
+                }
+              );
+            });
+          }
+          Lampa.Controller.toggle(curController);
+        },
+        onBack: function () {
+          Lampa.Controller.toggle(curController);
+        }
       });
     },
 
@@ -380,7 +509,7 @@
     }
   };
 
-  // ── Trakt.tv Import ──
+  // ── Trakt.tv Import ───────────────────────────────────────────────────
   var TraktImport = {
     _jszipPromise: null,
 
@@ -560,7 +689,7 @@
     }
   };
 
-  // ── Налаштування списків ──────────────────────────────────────────────
+  // ── Налаштування ──────────────────────────────────────────────────────
   function registerSettings() {
     if (!Lampa.Settings || !Lampa.Settings.listener) return;
 
@@ -635,6 +764,16 @@
           Cloud.backup();
         });
 
+        var overwriteItem = $(
+          '<div class="local-lists-item selector" data-type="button">' +
+            '<div class="local-lists-item__icon">' + ICON_CLOUD_OVERWRITE + '</div>' +
+            '<div class="local-lists-item__name">' + tr('local_lists_cloud_overwrite') + '</div>' +
+          '</div>'
+        );
+        overwriteItem.on('hover:enter', function () {
+          Cloud.overwrite();
+        });
+
         var restoreItem = $(
           '<div class="local-lists-item selector" data-type="button">' +
             '<div class="local-lists-item__icon">' + ICON_CLOUD_DOWN + '</div>' +
@@ -657,6 +796,7 @@
 
         e.body.append(tokenItem);
         e.body.append(backupItem);
+        e.body.append(overwriteItem);
         e.body.append(restoreItem);
         e.body.append(traktItem);
 
@@ -665,7 +805,7 @@
     });
   }
 
-  // ── Компоненти ────────────────────────────────────────────────────────
+  // ── Компоненти інтерфейсу ─────────────────────────────────────────────
   function RootComponent() {
     var _this = this;
     var scroll = new Lampa.Scroll({ mask: true, over: true, step: 250 });
@@ -812,7 +952,7 @@
     scroll.minus(); html.append(scroll.render());
   }
 
-  // ── Механізм зв'язування DOM-карток рядка «Мої списки» ─────────────────
+  // ── Рядок «Мої списки» у розділі «Закладки» ─────────────────────────
   function findListsRow() {
     var titleText = tr('local_lists_title');
     var $titles = $('.line__title, .card-line__title, .items-line__title');
@@ -919,7 +1059,6 @@
     setTimeout(applyRowCardHandlers, 800);
   }
 
-  // ── Реєстрація єдиного рядка «Мої списки» у розділі «Закладки» ─────────
   function registerListsContentRow() {
     if (!Lampa.ContentRows || !Lampa.ContentRows.add) return;
 
@@ -965,11 +1104,164 @@
     });
   }
 
+  // ── Лонг-тап на картці в каталозі ────────────────────────────────────
+  function extendCardMenuAndIcons() {
+    var cardModule = Lampa.Maker.map('Card');
+    if (!cardModule) return;
+
+    var onFavoriteUpdate = cardModule.Favorite.onUpdate;
+    cardModule.Favorite.onUpdate = function () {
+      var self = this;
+      if (onFavoriteUpdate) onFavoriteUpdate.apply(self);
+      if (isPerson(self.data)) return;
+
+      refreshCardIcon({
+        data: self.data,
+        card: self.html
+      });
+    };
+
+    var onMenuCreate = cardModule.Menu.onCreate;
+    cardModule.Menu.onCreate = function () {
+      var self = this;
+
+      var favoriteMenuList = this.menu_list.filter(function (menu) {
+        return menu.title === Lampa.Lang.translate('settings_input_links') ||
+               menu.title === Lampa.Lang.translate('title_book') ||
+               menu.title === Lampa.Lang.translate('menu_bookmarks');
+      })[0];
+
+      if (!favoriteMenuList || isPerson(self.data)) {
+        return onMenuCreate ? onMenuCreate.apply(this, arguments) : undefined;
+      }
+
+      var favoriteMenu = favoriteMenuList.menu;
+
+      favoriteMenuList.menu = function () {
+        var newItems = Lists.getAll().map(function (list) {
+          var isChecked = list.items && list.items.some(function (it) { 
+            return String(it.id) === String(self.data.id); 
+          });
+
+          return {
+            checkbox: true,
+            checked: isChecked ? self.data.id : undefined,
+            onCheck: function () {
+              var freshList = Lists.get(list.id);
+              var exists = freshList && freshList.items && freshList.items.some(function (it) { 
+                return String(it.id) === String(self.data.id); 
+              });
+
+              if (exists) {
+                Lists.removeItem(list.id, self.data.id);
+                Lampa.Noty.show(tr('local_lists_removed'));
+              } else {
+                Lists.addItem(list.id, self.data);
+                Lampa.Noty.show(tr('local_lists_added'));
+              }
+
+              if (cardModule.Favorite && cardModule.Favorite.onUpdate) {
+                cardModule.Favorite.onUpdate.apply(self);
+              }
+            },
+            title: list.name
+          };
+        });
+
+        var oldMenuItems = favoriteMenu.apply(favoriteMenuList).map(function (menuItem) {
+          if (!menuItem.onCheck) return menuItem;
+          var origOnCheck = menuItem.onCheck;
+          menuItem.onCheck = function () {
+            origOnCheck.apply(this, arguments);
+            if (cardModule.Favorite && cardModule.Favorite.onUpdate) {
+              cardModule.Favorite.onUpdate.apply(self);
+            }
+          };
+          return menuItem;
+        });
+
+        return newItems.concat(oldMenuItems);
+      };
+
+      if (onMenuCreate) onMenuCreate.apply(this, arguments);
+    };
+  }
+
+  // ── Меню «Вибране» у картці фільму (кнопка закладки) ─────────────────
+  function extendFullCardMenu(card) {
+    if (!card || card.id == null) return;
+
+    var $selectbox = $('body > .selectbox');
+    if (!$selectbox.length) return;
+
+    $selectbox.find('.local-lists-menu-item').remove();
+
+    var bookmarkMenuItem = $selectbox.find('.selectbox-item__title').filter(function () {
+      return $(this).text() === Lampa.Lang.translate('title_book');
+    });
+
+    var lists = Lists.getAll();
+
+    lists.forEach(function (list) {
+      var isChecked = list.items && list.items.some(function (it) { 
+        return String(it.id) === String(card.id); 
+      });
+
+      var $menuItem = $(
+        '<div class="selectbox-item selector local-lists-menu-item' + (isChecked ? ' selectbox-item--checked' : '') + '">' +
+          '<div class="selectbox-item__title">' + escapeHtml(list.name) + '</div>' +
+          '<div class="selectbox-item__checkbox"></div>' +
+        '</div>'
+      );
+
+      if (bookmarkMenuItem.length) {
+        $menuItem.insertBefore(bookmarkMenuItem.parent());
+      } else {
+        $selectbox.find('.scroll__body').prepend($menuItem);
+      }
+
+      $menuItem.on('hover:enter', function () {
+        var freshList = Lists.get(list.id);
+        var inList = freshList && freshList.items && freshList.items.some(function (it) { 
+          return String(it.id) === String(card.id); 
+        });
+
+        if (inList) {
+          Lists.removeItem(list.id, card.id);
+          $(this).removeClass('selectbox-item--checked');
+          Lampa.Noty.show(tr('local_lists_removed'));
+        } else {
+          Lists.addItem(list.id, card);
+          $(this).addClass('selectbox-item--checked');
+          Lampa.Noty.show(tr('local_lists_added'));
+        }
+
+        refreshBookmarkIcon();
+      });
+    });
+
+    Lampa.Controller.collectionSet($selectbox.find('.scroll__body'));
+
+    setTimeout(function () {
+      var $menuItems = $selectbox.find('.selector');
+      if ($menuItems.length > 0) {
+        Lampa.Controller.focus($menuItems.get(0));
+        if (typeof Navigator !== 'undefined') Navigator.focus($menuItems.get(0));
+      }
+    }, 10);
+  }
+
   function startPlugin() {
     addLang();
     registerSettings();
+
+    Lampa.Template.add('local-lists-star-icon-svg', ICON_STAR_SVG);
+    Lampa.Template.add('local-lists-star-icon', '<div class="card__icon icon--star">' + ICON_STAR_SVG + '</div>');
+
     $('body').append(
       '<style>' +
+        '.card__icon { position: relative; }' +
+        '.icon--star svg { position: absolute; height: 60%; width: 60%; top: 50%; left: 50%; transform: translate(-50%, -50%); }' +
         '.local-lists-root__grid{display:flex;flex-wrap:wrap;gap:1.6em;padding:1.6em 2.5em;}' +
         '.local-lists-root__card{width:12em;}' +
         '.local-lists-root__poster{width:100%;padding-top:150%;position:relative;border-radius:.9em;overflow:hidden;background:#222;box-sizing:border-box;border:3px solid transparent;}' +
@@ -1007,7 +1299,7 @@
         '}' +
         '.local-lists-card-add.focus .local-lists-add-icon{color:#ffffff !important;transform:scale(1.15);transition:transform 0.2s;}' +
 
-        /* Бейдж із лічильником на постері */
+        /* Бейдж із лічильником */
         '.local-lists-counter-badge{position:absolute !important;top:0.6em !important;right:0.6em !important;background:rgba(0,0,0,0.75) !important;color:#ffffff !important;font-size:0.85em !important;font-weight:bold !important;padding:0.15em 0.55em !important;border-radius:0.5em !important;z-index:3 !important;pointer-events:none !important;box-shadow:0 2px 4px rgba(0,0,0,0.6);}' +
 
         /* Меню налаштувань */
@@ -1020,10 +1312,11 @@
         '.local-lists-item__val{margin-left:0.8em !important;font-size:0.85em !important;color:rgba(255,255,255,0.5) !important;}' +
       '</style>'
     );
-    
+
     Lampa.Component.add('local_lists_root', RootComponent);
     Lampa.Component.add('local_lists_detail', DetailComponent);
     registerListsContentRow();
+    extendCardMenuAndIcons();
 
     $(document).on('hover:focus', '.card', function () {
       var $card = $(this);
@@ -1057,57 +1350,21 @@
       $firstRegister.before($register);
     });
 
-    function openListsMenuFor(card) {
-      var items = Lists.getAll().map(function (l) {
-        var n = normalizeCard(card);
-        var inList = l.items.some(function (it) { return it.id == n.id; });
-        return { title: (inList ? '✓ ' : '') + l.name + ' (' + l.items.length + ')', id: l.id };
-      });
-      items.unshift({ title: '+ ' + tr('local_lists_create'), id: 'new' });
-      Lampa.Select.show({
-        title: tr('local_lists_title'),
-        items: items,
-        onSelect: function (a) {
-          if (a.id === 'new') {
-            Lampa.Input.edit({ title: tr('local_lists_new_name'), value: '', free: true, nosave: true, nomic: true }, function (v) {
-              if (v) { var nl = Lists.create(v); Lists.addItem(nl.id, card); Lampa.Noty.show(tr('local_lists_added')); }
-              Lampa.Controller.toggle('content');
-            });
-          } else {
-            var list = Lists.get(a.id);
-            var n = normalizeCard(card);
-            var exists = list.items.some(function (it) { return it.id == n.id; });
-            if (exists) Lists.removeItem(a.id, n.id); else Lists.addItem(a.id, card);
-            Lampa.Noty.show(tr(exists ? 'local_lists_removed' : 'local_lists_added'));
-            Lampa.Controller.toggle('content');
-          }
-        },
-        onBack: function () { Lampa.Controller.toggle('content'); }
-      });
-    }
-
     Lampa.Listener.follow('full', function (e) {
       if (e.type !== 'complite') return;
-      var render = e.object.activity.render();
+      refreshBookmarkIcon();
+
+      var active = Lampa.Activity.active();
+      var render = (active && active.activity) ? active.activity.render() : (e.object && e.object.activity ? e.object.activity.render() : null);
+      if (!render) return;
+
       var $bookBtn = render.find('.button--book');
       if (!$bookBtn.length || $bookBtn.data('local-lists-bound')) return;
       $bookBtn.data('local-lists-bound', true);
 
       $bookBtn.on('hover:enter', function () {
-        var card = e.data;
-        var $selectbox = $('body > .selectbox');
-        if (!$selectbox.length || $selectbox.find('.local-lists-selectbox-item').length) return;
-
-        var $item = $(
-          '<div class="selectbox-item selector local-lists-selectbox-item">' +
-            '<div class="selectbox-item__title">' + tr('local_lists_button') + '</div>' +
-            '<div class="selectbox-item__checkbox"></div>' +
-          '</div>'
-        );
-        $selectbox.find('.selectbox-item').last().after($item);
-        $item.on('hover:enter', function () { openListsMenuFor(card); });
-
-        Lampa.Controller.collectionSet($selectbox.find('.scroll__body'));
+        var card = (e.object && e.object.card) || getActiveCard();
+        extendFullCardMenu(card);
       });
     });
   }
