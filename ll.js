@@ -35,6 +35,8 @@
       local_lists_cloud_overwrite_confirm: { uk: 'Перезаписати хмару поточними списками?', ru: 'Перезаписать облако текущими списками?', en: 'Overwrite cloud with current lists?' },
       local_lists_cloud_overwritten: { uk: 'Дані в хмарі успішно перезаписано', ru: 'Данные в облаке успешно перезаписаны', en: 'Cloud data successfully overwritten' },
       local_lists_cloud_restore: { uk: 'Відновити з хмари', ru: 'Восстановить из облака', en: 'Restore from Cloud' },
+      local_lists_cloud_restore_confirm: { uk: 'Замінити локальні списки даними з хмари?', ru: 'Заменить локальные списки данными из облака?', en: 'Replace local lists with cloud data?' },
+      local_lists_cloud_restored: { uk: 'Дані з хмари успішно відновлено', ru: 'Данные из облака успешно восстановлены', en: 'Data successfully restored from cloud' },
       local_lists_create: { uk: 'Створити список', ru: 'Создать список', en: 'Create list' },
       local_lists_new_name: { uk: 'Назва списку', ru: 'Название списка', en: 'List name' },
       local_lists_added: { uk: 'Додано', ru: 'Добавлено', en: 'Added' },
@@ -184,7 +186,7 @@
     }
   }
 
-  // ── Smart Merge ───────────────────────────────────────────────────────
+  // ── Smart Merge (використовується виключно в режимі Sync) ───────────
   function mergeCardItems(localItems, remoteItems) {
     localItems = Array.isArray(localItems) ? localItems : [];
     remoteItems = Array.isArray(remoteItems) ? remoteItems : [];
@@ -357,6 +359,7 @@
       });
     },
 
+    // 1. Двостороннє злиття (Smart Merge)
     backup: function () {
       if (!this.checkAuth()) return;
 
@@ -410,6 +413,7 @@
       });
     },
 
+    // 2. Примусовий експорт: локальні дані затирають хмару (Force Push)
     overwrite: function () {
       if (!this.checkAuth()) return;
 
@@ -460,50 +464,69 @@
       });
     },
 
+    // 3. Примусовий імпорт: хмара на 100% затирає локальний стан без злиття (Force Pull)
     restore: function () {
       if (!this.checkAuth()) return;
 
-      Lampa.Loading.start();
+      var _this = this;
+      var curController = (Lampa.Controller.enabled && Lampa.Controller.enabled()) ? Lampa.Controller.enabled().name : 'settings';
 
-      this.getGist(function (gist) {
-        if (!gist || !gist.files) {
-          Lampa.Loading.stop();
-          Lampa.Noty.show('Not found');
-          return;
-        }
+      Lampa.Select.show({
+        title: tr('local_lists_cloud_restore_confirm'),
+        items: [
+          { title: (Lampa.Lang && Lampa.Lang.translate('settings_param_yes')) || 'Так', id: 'yes' },
+          { title: (Lampa.Lang && Lampa.Lang.translate('settings_param_no')) || 'Ні', id: 'no' }
+        ],
+        onSelect: function (a) {
+          if (a.id === 'yes') {
+            Lampa.Loading.start();
 
-        var remoteLists = null;
-        var remoteFav = null;
+            _this.getGist(function (gist) {
+              if (!gist || !gist.files) {
+                Lampa.Loading.stop();
+                Lampa.Noty.show('Not found');
+                return;
+              }
 
-        if (gist.files['lampa_local_lists.json']) {
-          try { remoteLists = JSON.parse(gist.files['lampa_local_lists.json'].content); } catch (e) {}
-        }
-        if (gist.files['lampa_native_favorite.json']) {
-          try { remoteFav = JSON.parse(gist.files['lampa_native_favorite.json'].content); } catch (e) {}
-        }
+              var remoteLists = null;
+              var remoteFav = null;
 
-        if (!remoteLists && !remoteFav) {
-          Lampa.Loading.stop();
-          Lampa.Noty.show('Invalid backup data');
-          return;
-        }
+              if (gist.files['lampa_local_lists.json']) {
+                try { remoteLists = JSON.parse(gist.files['lampa_local_lists.json'].content); } catch (e) {}
+              }
+              if (gist.files['lampa_native_favorite.json']) {
+                try { remoteFav = JSON.parse(gist.files['lampa_native_favorite.json'].content); } catch (e) {}
+              }
 
-        if (Array.isArray(remoteLists)) {
-          var mergedLists = mergeLists(Lists.getAll(), remoteLists);
-          Lists.save(mergedLists);
-        }
+              if (!remoteLists && !remoteFav) {
+                Lampa.Loading.stop();
+                Lampa.Noty.show('Invalid backup data');
+                return;
+              }
 
-        if (remoteFav && typeof remoteFav === 'object') {
-          var mergedFav = mergeFavorites(Lampa.Storage.get('favorite', {}), remoteFav);
-          Lampa.Storage.set('favorite', mergedFav);
-        }
+              // Прямий перезапис локальних списків (без злиття зі старими)
+              if (Array.isArray(remoteLists)) {
+                Lists.save(remoteLists);
+              }
 
-        Lampa.Loading.stop();
-        Lampa.Noty.show('Restored');
+              // Прямий перезапис системного вибраного (без злиття)
+              if (remoteFav && typeof remoteFav === 'object') {
+                Lampa.Storage.set('favorite', remoteFav);
+              }
 
-        var cur = Lampa.Activity.active();
-        if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
-          Lampa.Activity.replace();
+              Lampa.Loading.stop();
+              Lampa.Noty.show(tr('local_lists_cloud_restored'));
+
+              var cur = Lampa.Activity.active();
+              if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
+                Lampa.Activity.replace();
+              }
+            });
+          }
+          Lampa.Controller.toggle(curController);
+        },
+        onBack: function () {
+          Lampa.Controller.toggle(curController);
         }
       });
     }
