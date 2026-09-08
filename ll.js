@@ -9,7 +9,7 @@
   var GIST_ID_KEY = 'local_lists_gist_id';
   var TRANSPARENT_PIXEL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 
-  var ICON_SETTINGS = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
+  var ICON_SETTINGS = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
   var ICON_KEY = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
   var ICON_CLOUD_UP = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 13v6"/><path d="m15 16-3-3-3 3"/></svg>';
   var ICON_CLOUD_DOWN = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 19v-6"/><path d="m9 16 3 3 3-3"/></svg>';
@@ -28,7 +28,7 @@
         ru: 'Сначала требуется авторизация (укажите GitHub Token)', 
         en: 'Authorization required first (specify GitHub Token)' 
       },
-      local_lists_cloud_backup: { uk: 'Зберегти у хмару', ru: 'Сохранить в облако', en: 'Backup to Cloud' },
+      local_lists_cloud_backup: { uk: 'Синхронізувати з хмарою (списки + вибране)', ru: 'Синхронизировать с облаком (списки + избранное)', en: 'Sync with Cloud (lists + favorites)' },
       local_lists_cloud_restore: { uk: 'Відновити з хмари', ru: 'Восстановить из облака', en: 'Restore from Cloud' },
       local_lists_create: { uk: 'Створити список', ru: 'Создать список', en: 'Create list' },
       local_lists_new_name: { uk: 'Назва списку', ru: 'Название списка', en: 'List name' },
@@ -103,7 +103,104 @@
     }
   };
 
-  // ── GitHub Cloud (Зберігає як власні списки, так і стандартні закладки Lampa) ──
+  // ── Утиліти злиття даних (Smart Merge) ──
+  function mergeCardItems(localItems, remoteItems) {
+    localItems = Array.isArray(localItems) ? localItems : [];
+    remoteItems = Array.isArray(remoteItems) ? remoteItems : [];
+    var map = {};
+    var res = [];
+
+    remoteItems.concat(localItems).forEach(function (item) {
+      if (!item || item.id == null) return;
+      var key = String(item.id);
+      if (!map[key]) {
+        map[key] = Object.assign({}, item);
+        res.push(map[key]);
+      } else {
+        Object.assign(map[key], item);
+      }
+    });
+
+    return res;
+  }
+
+  function mergeLists(localLists, remoteLists) {
+    localLists = Array.isArray(localLists) ? localLists : [];
+    remoteLists = Array.isArray(remoteLists) ? remoteLists : [];
+    var result = [];
+    var matchedRemoteIndices = {};
+
+    localLists.forEach(function (locList) {
+      var rIndex = -1;
+      for (var i = 0; i < remoteLists.length; i++) {
+        if (matchedRemoteIndices[i]) continue;
+        var r = remoteLists[i];
+        if (r.id === locList.id || (r.name && locList.name && r.name.trim().toLowerCase() === locList.name.trim().toLowerCase())) {
+          rIndex = i;
+          break;
+        }
+      }
+
+      if (rIndex !== -1) {
+        matchedRemoteIndices[rIndex] = true;
+        var remList = remoteLists[rIndex];
+        result.push({
+          id: locList.id || remList.id,
+          name: locList.name || remList.name,
+          items: mergeCardItems(locList.items, remList.items)
+        });
+      } else {
+        result.push(locList);
+      }
+    });
+
+    remoteLists.forEach(function (remList, idx) {
+      if (!matchedRemoteIndices[idx]) {
+        result.push(remList);
+      }
+    });
+
+    return result;
+  }
+
+  function mergeFavorites(localFav, remoteFav) {
+    localFav = (localFav && typeof localFav === 'object') ? localFav : {};
+    remoteFav = (remoteFav && typeof remoteFav === 'object') ? remoteFav : {};
+
+    var merged = {};
+    var allKeys = Object.keys(localFav).concat(Object.keys(remoteFav));
+
+    allKeys.forEach(function (key) {
+      if (merged[key]) return;
+      var lVal = localFav[key];
+      var rVal = remoteFav[key];
+
+      if (Array.isArray(lVal) || Array.isArray(rVal)) {
+        var arrL = Array.isArray(lVal) ? lVal : [];
+        var arrR = Array.isArray(rVal) ? rVal : [];
+        var map = {};
+        var list = [];
+
+        arrR.concat(arrL).forEach(function (item) {
+          if (!item) return;
+          var idKey = (typeof item === 'object') ? (item.id || JSON.stringify(item)) : String(item);
+          if (!map[idKey]) {
+            map[idKey] = true;
+            list.push(item);
+          }
+        });
+        merged[key] = list;
+      } else if (typeof lVal === 'object' && typeof rVal === 'object' && lVal && rVal) {
+        merged[key] = Object.assign({}, rVal, lVal);
+      } else {
+        merged[key] = lVal !== undefined ? lVal : rVal;
+      }
+    });
+
+    return merged;
+  }
+
+  // ── GitHub Cloud з інтелектуальним злиттям ──
   var Cloud = {
     checkAuth: function () {
       var token = (Lampa.Storage.get(GIST_TOKEN_KEY, '') || '').trim();
@@ -114,7 +211,7 @@
       return token;
     },
 
-    request: function (method, url, data, callback) {
+    request: function (method, url, data, callback, errorCallback) {
       var token = this.checkAuth();
       if (!token) {
         Lampa.Loading.stop();
@@ -122,11 +219,60 @@
       }
 
       $.ajax({
-        url: url, method: method,
-        headers: { 'Authorization': 'token ' + token, 'Accept': 'application/vnd.github.v3+json' },
+        url: url,
+        method: method,
+        headers: {
+          'Authorization': 'token ' + token,
+          'Accept': 'application/vnd.github.v3+json'
+        },
         data: data ? JSON.stringify(data) : null,
         success: callback,
-        error: function(){ Lampa.Loading.stop(); Lampa.Noty.show('GitHub Error'); }
+        error: function (xhr) {
+          if (errorCallback) {
+            errorCallback(xhr);
+          } else {
+            Lampa.Loading.stop();
+            Lampa.Noty.show('GitHub Error (' + (xhr ? xhr.status : 'unknown') + ')');
+          }
+        }
+      });
+    },
+
+    getGist: function (callback) {
+      var _this = this;
+      var id = Lampa.Storage.get(GIST_ID_KEY, '');
+
+      if (id) {
+        this.request('GET', 'https://api.github.com/gists/' + id, null, function (res) {
+          callback(res);
+        }, function (xhr) {
+          if (xhr && xhr.status === 404) {
+            Lampa.Storage.set(GIST_ID_KEY, '');
+            _this.findGist(callback);
+          } else {
+            Lampa.Loading.stop();
+            Lampa.Noty.show('GitHub Error');
+          }
+        });
+      } else {
+        this.findGist(callback);
+      }
+    },
+
+    findGist: function (callback) {
+      var _this = this;
+      this.request('GET', 'https://api.github.com/gists?per_page=100', null, function (res) {
+        if (Array.isArray(res)) {
+          var found = res.filter(function (g) {
+            return g.files && (g.files['lampa_local_lists.json'] || g.files['lampa_native_favorite.json']);
+          })[0];
+          if (found) {
+            Lampa.Storage.set(GIST_ID_KEY, found.id);
+            _this.request('GET', 'https://api.github.com/gists/' + found.id, null, callback);
+            return;
+          }
+        }
+        callback(null);
       });
     },
 
@@ -136,84 +282,105 @@
       var _this = this;
       Lampa.Loading.start();
 
-      var listsData = Lists.getAll();
-      var nativeFavorite = Lampa.Storage.get('favorite', {});
+      this.getGist(function (gist) {
+        var remoteLists = [];
+        var remoteFav = {};
 
-      var data = { 
-        files: { 
-          'lampa_local_lists.json': { content: JSON.stringify(listsData) },
-          'lampa_native_favorite.json': { content: JSON.stringify(nativeFavorite) }
-        } 
-      };
-      var id = Lampa.Storage.get(GIST_ID_KEY, '');
+        if (gist && gist.files) {
+          if (gist.files['lampa_local_lists.json']) {
+            try { remoteLists = JSON.parse(gist.files['lampa_local_lists.json'].content); } catch (e) {}
+          }
+          if (gist.files['lampa_native_favorite.json']) {
+            try { remoteFav = JSON.parse(gist.files['lampa_native_favorite.json'].content); } catch (e) {}
+          }
+        }
 
-      this.request(id ? 'PATCH' : 'POST', id ? 'https://api.github.com/gists/'+id : 'https://api.github.com/gists', data, function(res){
-        Lampa.Storage.set(GIST_ID_KEY, res.id);
-        Lampa.Loading.stop();
-        Lampa.Noty.show('Success');
+        // Об'єднуємо хмарний та локальний стани без втрати даних
+        var mergedLists = mergeLists(Lists.getAll(), remoteLists);
+        var mergedFav = mergeFavorites(Lampa.Storage.get('favorite', {}), remoteFav);
+
+        // Зберігаємо об'єднаний актуальний результат локально
+        Lists.save(mergedLists);
+        Lampa.Storage.set('favorite', mergedFav);
+
+        var data = {
+          description: 'Lampa Local Lists & Favorites Sync',
+          files: {
+            'lampa_local_lists.json': { content: JSON.stringify(mergedLists, null, 2) },
+            'lampa_native_favorite.json': { content: JSON.stringify(mergedFav, null, 2) }
+          }
+        };
+
+        var gistId = gist ? gist.id : Lampa.Storage.get(GIST_ID_KEY, '');
+
+        _this.request(
+          gistId ? 'PATCH' : 'POST',
+          gistId ? 'https://api.github.com/gists/' + gistId : 'https://api.github.com/gists',
+          data,
+          function (res) {
+            Lampa.Storage.set(GIST_ID_KEY, res.id);
+            Lampa.Loading.stop();
+            Lampa.Noty.show('Синхронізовано');
+
+            var cur = Lampa.Activity.active();
+            if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
+              Lampa.Activity.replace();
+            }
+          }
+        );
       });
     },
 
     restore: function () {
       if (!this.checkAuth()) return;
 
-      var _this = this;
       Lampa.Loading.start();
-      var id = Lampa.Storage.get(GIST_ID_KEY, '');
 
-      if (!id) {
-        this.request('GET', 'https://api.github.com/gists', null, function(res){
-          var found = res.filter(function(g){ return g.files && g.files['lampa_local_lists.json']; })[0];
-          if (found) {
-            Lampa.Storage.set(GIST_ID_KEY, found.id);
-            _this.restore();
-          } else {
-            Lampa.Loading.stop();
-            Lampa.Noty.show('Not found');
-          }
-        });
-        return;
-      }
-
-      this.request('GET', 'https://api.github.com/gists/'+id, null, function(res){
-        var restoredAny = false;
-
-        // Відновлюємо списки
-        if (res.files && res.files['lampa_local_lists.json']) {
-          try {
-            var parsedLists = JSON.parse(res.files['lampa_local_lists.json'].content);
-            if (Array.isArray(parsedLists)) {
-              Lists.save(parsedLists);
-              restoredAny = true;
-            }
-          } catch (e) {}
+      this.getGist(function (gist) {
+        if (!gist || !gist.files) {
+          Lampa.Loading.stop();
+          Lampa.Noty.show('Not found');
+          return;
         }
 
-        // Відновлюємо стандартні закладки Lampa
-        if (res.files && res.files['lampa_native_favorite.json']) {
-          try {
-            var parsedFav = JSON.parse(res.files['lampa_native_favorite.json'].content);
-            if (parsedFav && typeof parsedFav === 'object') {
-              Lampa.Storage.set('favorite', parsedFav);
-              restoredAny = true;
-            }
-          } catch (e) {}
+        var remoteLists = null;
+        var remoteFav = null;
+
+        if (gist.files['lampa_local_lists.json']) {
+          try { remoteLists = JSON.parse(gist.files['lampa_local_lists.json'].content); } catch (e) {}
+        }
+        if (gist.files['lampa_native_favorite.json']) {
+          try { remoteFav = JSON.parse(gist.files['lampa_native_favorite.json'].content); } catch (e) {}
+        }
+
+        if (!remoteLists && !remoteFav) {
+          Lampa.Loading.stop();
+          Lampa.Noty.show('Invalid backup data');
+          return;
+        }
+
+        if (Array.isArray(remoteLists)) {
+          var mergedLists = mergeLists(Lists.getAll(), remoteLists);
+          Lists.save(mergedLists);
+        }
+
+        if (remoteFav && typeof remoteFav === 'object') {
+          var mergedFav = mergeFavorites(Lampa.Storage.get('favorite', {}), remoteFav);
+          Lampa.Storage.set('favorite', mergedFav);
         }
 
         Lampa.Loading.stop();
-        if (restoredAny) {
-          Lampa.Noty.show('Restored');
-          if (Lampa.Activity.active().component === 'bookmarks' || Lampa.Activity.active().component === 'local_lists_root') {
-            Lampa.Activity.replace();
-          }
-        } else {
-          Lampa.Noty.show('Invalid backup data');
+        Lampa.Noty.show('Restored');
+
+        var cur = Lampa.Activity.active();
+        if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
+          Lampa.Activity.replace();
         }
       });
     }
   };
 
-  // ── Trakt.tv Import ───────────────────────────────────────────────────
+  // ── Trakt.tv Import ──
   var TraktImport = {
     _jszipPromise: null,
 
@@ -427,7 +594,7 @@
 
       if (e.name === 'local_lists_settings') {
         e.body.empty();
-        e.body.attr('style', 'display: flex !important; flex-direction: column !important; align-items: stretch !important; width: 100% !important; min-width: 100% !important; height: auto !important;');
+        e.body.attr('style', 'display: flex !important; flex-direction: column !important; align-items: stretch !important; width: 100% !important; min-width: 100% !important; height: auto !important; padding-top: 1.6em !important;');
 
         var $scrollBody = e.body.closest('.scroll__body');
         if ($scrollBody.length) {
@@ -671,7 +838,6 @@
       var $card = $(this);
 
       if (index < lists.length) {
-        // Картка списку
         var list = lists[index];
         $card.addClass('local-lists-card card--loaded');
         $card.data('local-list-id', list.id);
@@ -713,7 +879,6 @@
           });
         });
       } else {
-        // Картка "+" (Створити список)
         $card.addClass('local-lists-card-add card--loaded');
         $card.find('img').remove();
         $card.find('.card__img-broken').remove();
@@ -846,8 +1011,8 @@
         '.local-lists-counter-badge{position:absolute !important;top:0.6em !important;right:0.6em !important;background:rgba(0,0,0,0.75) !important;color:#ffffff !important;font-size:0.85em !important;font-weight:bold !important;padding:0.15em 0.55em !important;border-radius:0.5em !important;z-index:3 !important;pointer-events:none !important;box-shadow:0 2px 4px rgba(0,0,0,0.6);}' +
 
         /* Меню налаштувань */
-        '.local-lists-settings-list{display:flex !important;flex-direction:column !important;align-items:stretch !important;width:100% !important;min-width:100% !important;box-sizing:border-box !important;padding:0.3em 0 !important;}' +
-        '.local-lists-item{display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:flex-start !important;width:100% !important;height:3.8em !important;min-height:3.8em !important;padding:0 1.4em !important;margin:0.15em 0 !important;background:transparent !important;border-radius:0.6em !important;box-sizing:border-box !important;cursor:pointer !important;transition:background 0.15s ease !important;}' +
+        '.local-lists-settings-list{display:flex !important;flex-direction:column !important;align-items:stretch !important;width:100% !important;min-width:100% !important;box-sizing:border-box !important;padding:1.4em 0 0.3em 0 !important;}' +
+        '.local-lists-item{display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:flex-start !important;width:100% !important;height:3.8em !important;min-height:3.8em !important;padding:0 1.4em !important;margin:0.2em 0 !important;background:transparent !important;border-radius:0.6em !important;box-sizing:border-box !important;cursor:pointer !important;transition:background 0.15s ease !important;}' +
         '.local-lists-item.focus{background:rgba(255,255,255,0.12) !important;}' +
         '.local-lists-item__icon{display:flex !important;align-items:center !important;justify-content:center !important;margin-right:1.3em !important;width:28px !important;min-width:28px !important;height:28px !important;}' +
         '.local-lists-item__icon svg{width:26px !important;height:26px !important;stroke:#ffffff !important;display:block !important;}' +
