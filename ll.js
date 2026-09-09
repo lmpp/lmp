@@ -9,6 +9,7 @@
   var GIST_ID_KEY = 'local_lists_gist_id';
   var TRANSPARENT_PIXEL = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 
+  // ── Іконки SVG ────────────────────────────────────────────────────────
   var ICON_SETTINGS = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
   var ICON_KEY = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
   var ICON_CLOUD_UP = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 13v6"/><path d="m15 16-3-3-3 3"/></svg>';
@@ -16,6 +17,13 @@
   var ICON_CLOUD_DOWN = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 19v-6"/><path d="m9 16 3 3 3-3"/></svg>';
   var ICON_IMPORT = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
   var ICON_STAR_SVG = '<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6162 7.10981L15.8464 7.55198L16.3381 7.63428L22.2841 8.62965C22.8678 8.72736 23.0999 9.44167 22.6851 9.86381L18.4598 14.1641L18.1104 14.5196L18.184 15.0127L19.0748 20.9752C19.1622 21.5606 18.5546 22.002 18.025 21.738L12.6295 19.0483L12.1833 18.8259L11.7372 19.0483L6.34171 21.738C5.81206 22.002 5.20443 21.5606 5.29187 20.9752L6.18264 15.0127L6.25629 14.5196L5.9069 14.1641L1.68155 9.86381C1.26677 9.44167 1.49886 8.72736 2.08255 8.62965L8.02855 7.63428L8.52022 7.55198L8.75043 7.10981L11.5345 1.76241C11.8078 1.23748 12.5589 1.23748 12.8322 1.76241L15.6162 7.10981Z" stroke="currentColor" stroke-width="2.2"></path></svg>';
+  
+  // Іконки для меню редагування списків
+  var ICON_EDIT = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
+  var ICON_UP = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+  var ICON_DOWN = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+  var ICON_CHECKED = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3" ry="3"></rect><polyline points="7 12 11 16 17 8"></polyline></svg>';
+  var ICON_UNCHECKED = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3" ry="3" opacity="0.4"></rect></svg>';
 
   function addLang() {
     if (!Lampa.Lang || !Lampa.Lang.add) return;
@@ -49,7 +57,8 @@
       local_lists_import_progress: { uk: 'Імпортую списки…', ru: 'Импортирую списки…', en: 'Importing lists…' },
       local_lists_import_done: { uk: 'Імпорт завершено', ru: 'Импорт завершён', en: 'Import complete' },
       local_lists_import_error: { uk: 'Не вдалося прочитати архів', ru: 'Не удалось прочитать архив', en: 'Failed to read archive' },
-      local_lists_import_no_lists: { uk: 'У архіві не знайдено файл lists-lists.json', ru: 'В архиве не найден файл lists-lists.json', en: 'lists-lists.json not found in archive' }
+      local_lists_import_no_lists: { uk: 'У архіві не знайдено файл lists-lists.json', ru: 'В архиве не найден файл lists-lists.json', en: 'lists-lists.json not found in archive' },
+      local_lists_edit_menu: { uk: 'Редагувати списки', ru: 'Редактировать списки', en: 'Edit Lists' }
     });
   }
 
@@ -89,11 +98,14 @@
 
   var Lists = {
     getAll: function () { return Lampa.Storage.get(STORAGE_KEY, []); },
+    getVisible: function () {
+      return this.getAll().filter(function (l) { return !l.hidden; });
+    },
     save: function (l) { Lampa.Storage.set(STORAGE_KEY, l); },
     get: function (id) { return this.getAll().filter(function(l){ return l.id === id; })[0]; },
     create: function (name) {
       var l = this.getAll();
-      var newList = { id: 'list_' + Date.now(), name: name, items: [] };
+      var newList = { id: 'list_' + Date.now(), name: name, hidden: false, items: [] };
       l.push(newList); this.save(l); return newList;
     },
     remove: function (id) { 
@@ -186,7 +198,7 @@
     }
   }
 
-  // ── Smart Merge (використовується виключно в режимі Sync) ───────────
+  // ── Smart Merge (збереження hidden під час синхронізації) ───────────
   function mergeCardItems(localItems, remoteItems) {
     localItems = Array.isArray(localItems) ? localItems : [];
     remoteItems = Array.isArray(remoteItems) ? remoteItems : [];
@@ -230,6 +242,7 @@
         result.push({
           id: locList.id || remList.id,
           name: locList.name || remList.name,
+          hidden: locList.hidden !== undefined ? locList.hidden : (remList.hidden || false),
           items: mergeCardItems(locList.items, remList.items)
         });
       } else {
@@ -359,7 +372,6 @@
       });
     },
 
-    // 1. Двостороннє злиття (Smart Merge)
     backup: function () {
       if (!this.checkAuth()) return;
 
@@ -413,7 +425,6 @@
       });
     },
 
-    // 2. Примусовий експорт: локальні дані затирають хмару (Force Push)
     overwrite: function () {
       if (!this.checkAuth()) return;
 
@@ -464,7 +475,6 @@
       });
     },
 
-    // 3. Примусовий імпорт: хмара на 100% затирає локальний стан без злиття (Force Pull)
     restore: function () {
       if (!this.checkAuth()) return;
 
@@ -504,12 +514,10 @@
                 return;
               }
 
-              // Прямий перезапис локальних списків (без злиття зі старими)
               if (Array.isArray(remoteLists)) {
                 Lists.save(remoteLists);
               }
 
-              // Прямий перезапис системного вибраного (без злиття)
               if (remoteFav && typeof remoteFav === 'object') {
                 Lampa.Storage.set('favorite', remoteFav);
               }
@@ -712,6 +720,143 @@
     }
   };
 
+  // ── Компонент редагування (порядок, приховування) ─────────────────────
+  function EditListsComponent() {
+    var _this = this;
+    var scroll = new Lampa.Scroll({ mask: true, over: true, step: 250 });
+    var html = $('<div class="local-lists-editor"></div>');
+    var body = $('<div class="local-lists-editor__body"></div>');
+
+    this.create = function () {
+      this.build();
+      return this.render();
+    };
+
+    this.build = function (targetFocus) {
+      body.empty();
+      var lists = Lists.getAll();
+
+      if (lists.length === 0) {
+        body.append('<div class="empty__title" style="padding: 3em; text-align: center; opacity: 0.5;">' + (tr('empty_title') || 'Порожньо') + '</div>');
+      }
+
+      lists.forEach(function (list, index) {
+        var isHidden = !!list.hidden;
+        var row = $(
+          '<div class="ll-edit-row' + (isHidden ? ' ll-edit-row--hidden' : '') + '">' +
+            '<div class="ll-edit-row__title">' + escapeHtml(list.name) + '</div>' +
+            '<div class="ll-edit-row__controls"></div>' +
+          '</div>'
+        );
+
+        var controls = row.find('.ll-edit-row__controls');
+
+        var btnUp = $('<div class="selector ll-edit-btn" data-list-id="' + list.id + '" data-action="up" title="Up">' + ICON_UP + '</div>');
+        var btnDown = $('<div class="selector ll-edit-btn" data-list-id="' + list.id + '" data-action="down" title="Down">' + ICON_DOWN + '</div>');
+        var btnVis = $('<div class="selector ll-edit-btn" data-list-id="' + list.id + '" data-action="vis" title="Visibility">' + (isHidden ? ICON_UNCHECKED : ICON_CHECKED) + '</div>');
+
+        if (index === 0) btnUp.addClass('ll-edit-btn--disabled');
+        if (index === lists.length - 1) btnDown.addClass('ll-edit-btn--disabled');
+
+        btnUp.on('hover:focus', function () { scroll.update($(this)); });
+        btnDown.on('hover:focus', function () { scroll.update($(this)); });
+        btnVis.on('hover:focus', function () { scroll.update($(this)); });
+
+        btnUp.on('hover:enter', function () {
+          if (index > 0) {
+            var all = Lists.getAll();
+            var tmp = all[index];
+            all[index] = all[index - 1];
+            all[index - 1] = tmp;
+            Lists.save(all);
+            _this.build({ id: list.id, action: 'up' });
+          }
+        });
+
+        btnDown.on('hover:enter', function () {
+          var all = Lists.getAll();
+          if (index < all.length - 1) {
+            var tmp = all[index];
+            all[index] = all[index + 1];
+            all[index + 1] = tmp;
+            Lists.save(all);
+            _this.build({ id: list.id, action: 'down' });
+          }
+        });
+
+        btnVis.on('hover:enter', function () {
+          var all = Lists.getAll();
+          all[index].hidden = !all[index].hidden;
+          Lists.save(all);
+          _this.build({ id: list.id, action: 'vis' });
+        });
+
+        controls.append(btnUp, btnDown, btnVis);
+        body.append(row);
+      });
+
+      scroll.clear();
+      scroll.append(body);
+
+      // Відновлення фокусу на конкретній кнопці після переміщення
+      Lampa.Controller.collectionSet(scroll.render());
+      var focusTarget = null;
+      if (targetFocus) {
+        focusTarget = body.find('.selector[data-list-id="' + targetFocus.id + '"][data-action="' + targetFocus.action + '"]').get(0);
+      }
+      if (!focusTarget) {
+        focusTarget = body.find('.selector:not(.ll-edit-btn--disabled)').get(0);
+      }
+      if (focusTarget) {
+        Lampa.Controller.collectionFocus(focusTarget, scroll.render());
+      }
+    };
+
+    this.start = function () {
+      Lampa.Controller.add('content', {
+        toggle: function () {
+          Lampa.Controller.collectionSet(scroll.render());
+          var first = body.find('.selector:not(.ll-edit-btn--disabled)').get(0) || body.find('.selector').get(0);
+          if (first) Lampa.Controller.collectionFocus(first, scroll.render());
+        },
+        left: function () {
+          if (typeof Navigator !== 'undefined' && Navigator.canmove('left')) Navigator.move('left');
+          else Lampa.Controller.toggle('menu');
+        },
+        up: function () {
+          if (typeof Navigator !== 'undefined' && Navigator.canmove('up')) Navigator.move('up');
+          else Lampa.Controller.toggle('head');
+        },
+        down: function () {
+          if (typeof Navigator !== 'undefined' && Navigator.canmove('down')) Navigator.move('down');
+        },
+        right: function () {
+          if (typeof Navigator !== 'undefined' && Navigator.canmove('right')) Navigator.move('right');
+        },
+        back: function () {
+          Lampa.Activity.backward();
+        }
+      });
+      Lampa.Controller.toggle('content');
+    };
+
+    this.pause = function () {};
+    this.stop = function () {};
+
+    this.render = function (js) { return js ? html : html[0]; };
+    this.destroy = function () {
+      scroll.destroy();
+      html.remove();
+      // Оновити попередній екран при поверненні
+      var cur = Lampa.Activity.active();
+      if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
+        Lampa.Activity.replace();
+      }
+    };
+    scroll.minus();
+    html.append(scroll.render());
+  }
+
   // ── Налаштування ──────────────────────────────────────────────────────
   function registerSettings() {
     if (!Lampa.Settings || !Lampa.Settings.listener) return;
@@ -757,6 +902,16 @@
         if ($title.length) $title.text(tr('local_lists_settings'));
 
         var token = Lampa.Storage.get(GIST_TOKEN_KEY, '');
+
+        var editItem = $(
+          '<div class="local-lists-item selector" data-type="button">' +
+            '<div class="local-lists-item__icon">' + ICON_EDIT + '</div>' +
+            '<div class="local-lists-item__name">' + tr('local_lists_edit_menu') + '</div>' +
+          '</div>'
+        );
+        editItem.on('hover:enter', function () {
+          Lampa.Activity.push({ component: 'local_lists_edit', title: tr('local_lists_edit_menu') });
+        });
 
         var tokenItem = $(
           '<div class="local-lists-item selector" data-type="input">' +
@@ -817,6 +972,7 @@
           TraktImport.run();
         });
 
+        e.body.append(editItem);
         e.body.append(tokenItem);
         e.body.append(backupItem);
         e.body.append(overwriteItem);
@@ -842,22 +998,41 @@
 
     this.build = function () {
       body.empty();
-      var lists = Lists.getAll();
+      var lists = Lists.getVisible();
       lists.forEach(function (l) {
         var cover = (l.items && l.items.length) ? l.items[0].img : './img/img_broken.svg';
         var item = $('<div class="selector local-lists-root__card"><div class="local-lists-root__poster"><img src="'+escapeHtml(cover)+'" onerror="this.src=\'./img/img_broken.svg\'"><div class="local-lists-root__badge">'+l.items.length+'</div></div><div class="local-lists-root__title">'+escapeHtml(l.name)+'</div></div>');
         item.on('hover:focus', function () { scroll.update($(this)); });
         item.on('hover:enter', function() { Lampa.Activity.push({ component: 'local_lists_detail', list_id: l.id, title: l.name }); });
         item.on('hover:long', function() {
-           Lampa.Select.show({ title: l.name, items: [{title: tr('local_lists_remove_item'), id: 'del'}], onSelect: function(a) { if(a.id==='del'){ Lists.remove(l.id); _this.build(); } Lampa.Controller.toggle('content'); }, onBack: function(){ Lampa.Controller.toggle('content'); } });
+           Lampa.Select.show({
+             title: l.name,
+             items: [
+               { title: tr('local_lists_remove_item'), id: 'del' },
+               { title: tr('local_lists_edit_menu'), id: 'edit' }
+             ],
+             onSelect: function(a) {
+               if (a.id === 'del') {
+                 Lists.remove(l.id);
+                 _this.build();
+               } else if (a.id === 'edit') {
+                 Lampa.Activity.push({ component: 'local_lists_edit', title: tr('local_lists_edit_menu') });
+               }
+               Lampa.Controller.toggle('content');
+             },
+             onBack: function(){ Lampa.Controller.toggle('content'); }
+           });
         });
         body.append(item);
       });
+
       var addBtn = $('<div class="selector local-lists-root__card"><div class="local-lists-root__poster local-lists-root__poster--add"><span>+</span></div><div class="local-lists-root__title">'+tr('local_lists_create')+'</div></div>');
       addBtn.on('hover:focus', function () { scroll.update($(this)); });
       addBtn.on('hover:enter', function() { Lampa.Input.edit({ title: tr('local_lists_new_name'), value: '', free: true, nosave: true, nomic: true }, function(v) { if(v){ Lists.create(v); _this.build(); } Lampa.Controller.toggle('content'); }); });
       body.append(addBtn);
-      scroll.clear(); scroll.append(body);
+
+      scroll.clear();
+      scroll.append(body);
     };
 
     this.start = function () {
@@ -993,7 +1168,7 @@
     var $row = findListsRow();
     if (!$row || !$row.length) return;
 
-    var lists = Lists.getAll();
+    var lists = Lists.getVisible();
     var $cards = $row.find('.card');
     if (!$cards.length) return;
 
@@ -1026,13 +1201,18 @@
           if (e) e.stopPropagation();
           Lampa.Select.show({
             title: list.name,
-            items: [{ title: tr('local_lists_remove_item'), id: 'del' }],
+            items: [
+              { title: tr('local_lists_remove_item'), id: 'del' },
+              { title: tr('local_lists_edit_menu'), id: 'edit' }
+            ],
             onSelect: function (a) {
               if (a.id === 'del') {
                 Lists.remove(list.id);
                 if (Lampa.Activity.active() && Lampa.Activity.active().component === 'bookmarks') {
                   Lampa.Activity.replace();
                 }
+              } else if (a.id === 'edit') {
+                Lampa.Activity.push({ component: 'local_lists_edit', title: tr('local_lists_edit_menu') });
               }
               Lampa.Controller.toggle('content');
             },
@@ -1090,7 +1270,7 @@
       name: 'local_lists_row_overview',
       screen: ['bookmarks'],
       call: function () {
-        var lists = Lists.getAll();
+        var lists = Lists.getVisible();
         var results = [];
 
         lists.forEach(function (list) {
@@ -1161,7 +1341,7 @@
       var favoriteMenu = favoriteMenuList.menu;
 
       favoriteMenuList.menu = function () {
-        var newItems = Lists.getAll().map(function (list) {
+        var newItems = Lists.getVisible().map(function (list) {
           var isChecked = list.items && list.items.some(function (it) { 
             return String(it.id) === String(self.data.id); 
           });
@@ -1223,7 +1403,7 @@
       return $(this).text() === Lampa.Lang.translate('title_book');
     });
 
-    var lists = Lists.getAll();
+    var lists = Lists.getVisible();
 
     lists.forEach(function (list) {
       var isChecked = list.items && list.items.some(function (it) { 
@@ -1333,11 +1513,26 @@
         '.local-lists-item__icon svg{width:26px !important;height:26px !important;stroke:#ffffff !important;display:block !important;}' +
         '.local-lists-item__name{display:flex !important;align-items:center !important;font-size:1.2em !important;font-weight:400 !important;color:#ffffff !important;white-space:nowrap !important;}' +
         '.local-lists-item__val{margin-left:0.8em !important;font-size:0.85em !important;color:rgba(255,255,255,0.5) !important;}' +
+
+        /* Меню редагування списків (порядок, приховування) */
+        '.local-lists-editor{width:100%;height:100%;box-sizing:border-box;}' +
+        '.local-lists-editor__body{max-width:54em;margin:0 auto;padding:1.6em 2em;box-sizing:border-box;}' +
+        '.ll-edit-row{display:flex;align-items:center;justify-content:space-between;padding:0.7em 1.2em;background:rgba(255,255,255,0.05);margin-bottom:0.6em;border-radius:0.8em;box-sizing:border-box;transition:opacity 0.2s, background 0.2s;}' +
+        '.ll-edit-row--hidden{opacity:0.45;}' +
+        '.ll-edit-row__title{flex-grow:1;font-size:1.25em;font-weight:400;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:1em;}' +
+        '.ll-edit-row__controls{display:flex;align-items:center;gap:0.4em;flex-shrink:0;}' +
+        '.ll-edit-btn{display:flex;align-items:center;justify-content:center;width:2.8em;height:2.8em;background:rgba(255,255,255,0.06);border-radius:0.6em;cursor:pointer;transition:all 0.15s ease;}' +
+        '.ll-edit-btn svg{stroke:#fff;display:block;}' +
+        '.ll-edit-btn.focus{background:#fff !important;}' +
+        '.ll-edit-btn.focus svg{stroke:#000 !important;}' +
+        '.ll-edit-btn--disabled{opacity:0.2 !important;pointer-events:none !important;}' +
       '</style>'
     );
 
     Lampa.Component.add('local_lists_root', RootComponent);
     Lampa.Component.add('local_lists_detail', DetailComponent);
+    Lampa.Component.add('local_lists_edit', EditListsComponent);
+
     registerListsContentRow();
     extendCardMenuAndIcons();
 
@@ -1362,7 +1557,7 @@
       var $firstRegister = $render.find('.register').first();
       if (!$firstRegister.length) return;
 
-      var lists = Lists.getAll();
+      var lists = Lists.getVisible();
       var $register = Lampa.Template.js('register').addClass('selector').addClass('local-lists-register-btn');
       $register.find('.register__name').text(tr('local_lists_title'));
       $register.find('.register__counter').text(lists.length);
