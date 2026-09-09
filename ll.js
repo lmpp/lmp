@@ -859,130 +859,129 @@
 
   // ── Налаштування ──────────────────────────────────────────────────────
   function registerSettings() {
-    if (!Lampa.Settings || !Lampa.Settings.listener) return;
+  if (!Lampa.SettingsApi) return;
 
-    if (Lampa.Template && Lampa.Template.add) {
-      Lampa.Template.add('settings_local_lists_settings', '<div class="local-lists-settings-list"></div>');
+  // 1. Реєструємо головний розділ у Налаштуваннях
+  Lampa.SettingsApi.addComponent({
+    component: 'local_lists_settings',
+    name: tr('local_lists_settings'),
+    icon: ICON_SETTINGS
+  });
+
+  // 2. Пункт: Редагувати списки (порядок, приховування)
+  Lampa.SettingsApi.addParam({
+    component: 'local_lists_settings',
+    param: {
+      name: 'll_param_edit',
+      type: 'button'
+    },
+    field: {
+      name: tr('local_lists_edit_menu'),
+      description: 'Зміна порядку відображення та приховування списків'
+    },
+    onChange: function () {
+      Lampa.Activity.push({
+        component: 'local_lists_edit',
+        title: tr('local_lists_edit_menu')
+      });
     }
+  });
 
-    Lampa.Settings.listener.follow('open', function (e) {
-      if (e.name === 'main') {
-        if (e.body.find('[data-component="local_lists_settings"]').length) return;
+  // 3. Пункт: GitHub Token
+  Lampa.SettingsApi.addParam({
+    component: 'local_lists_settings',
+    param: {
+      name: 'll_param_token',
+      type: 'button'
+    },
+    field: {
+      name: tr('local_lists_github_auth'),
+      description: 'Натисніть, щоб ввести особистий токен GitHub'
+    },
+    onRender: function (item) {
+      // Відображаємо актуальний статус токена
+      var token = Lampa.Storage.get(GIST_TOKEN_KEY, '');
+      var label = token ? '••••••••' : '---';
+      item.find('.settings-param__value').text(label);
+    },
+    onChange: function () {
+      Lampa.Input.edit({
+        title: tr('local_lists_github_auth'),
+        value: Lampa.Storage.get(GIST_TOKEN_KEY, ''),
+        free: true,
+        nosave: true
+      }, function (value) {
+        var trimmed = (value || '').trim();
+        Lampa.Storage.set(GIST_TOKEN_KEY, trimmed);
+        Lampa.Settings.update(); // автоматично оновить напис
+      });
+    }
+  });
 
-        var folder = $(
-          '<div class="settings-folder selector" data-component="local_lists_settings">' +
-            '<div class="settings-folder__icon">' + ICON_SETTINGS + '</div>' +
-            '<div class="settings-folder__name">' + tr('local_lists_settings') + '</div>' +
-          '</div>'
-        );
+  // 4. Пункт: Синхронізувати з хмарою
+  Lampa.SettingsApi.addParam({
+    component: 'local_lists_settings',
+    param: {
+      name: 'll_param_sync',
+      type: 'button'
+    },
+    field: {
+      name: tr('local_lists_cloud_backup'),
+      description: 'Об\'єднати локальні списки і закладки з хмарою GitHub'
+    },
+    onChange: function () {
+      Cloud.backup();
+    }
+  });
 
-        folder.on('hover:enter', function () {
-          Lampa.Settings.create('local_lists_settings');
-        });
+  // 5. Пункт: Перезаписати в хмарі
+  Lampa.SettingsApi.addParam({
+    component: 'local_lists_settings',
+    param: {
+      name: 'll_param_overwrite',
+      type: 'button'
+    },
+    field: {
+      name: tr('local_lists_cloud_overwrite'),
+      description: 'Замінити всі дані в хмарі поточними локальними списками'
+    },
+    onChange: function () {
+      Cloud.overwrite();
+    }
+  });
 
-        if (e.body.find('[data-component="more"]').length) {
-          e.body.find('[data-component="more"]').after(folder);
-        } else {
-          e.body.append(folder);
-        }
+  // 6. Пункт: Відновити з хмари
+  Lampa.SettingsApi.addParam({
+    component: 'local_lists_settings',
+    param: {
+      name: 'll_param_restore',
+      type: 'button'
+    },
+    field: {
+      name: tr('local_lists_cloud_restore'),
+      description: 'Повністю замінити локальні списки даними з хмари'
+    },
+    onChange: function () {
+      Cloud.restore();
+    }
+  });
 
-        Lampa.Settings.update();
-      }
-
-      if (e.name === 'local_lists_settings') {
-        e.body.empty();
-        e.body.attr('style', 'display: flex !important; flex-direction: column !important; align-items: stretch !important; width: 100% !important; min-width: 100% !important; height: auto !important; padding-top: 1.6em !important;');
-
-        var $scrollBody = e.body.closest('.scroll__body');
-        if ($scrollBody.length) {
-          $scrollBody.attr('style', 'display: flex !important; flex-direction: column !important; align-items: stretch !important; width: 100% !important; height: auto !important; white-space: normal !important;');
-        }
-
-        var $title = $('.settings__title, .settings-title, .settings__head .title');
-        if ($title.length) $title.text(tr('local_lists_settings'));
-
-        var token = Lampa.Storage.get(GIST_TOKEN_KEY, '');
-
-        var editItem = $(
-          '<div class="local-lists-item selector" data-type="button">' +
-            '<div class="local-lists-item__icon">' + ICON_EDIT + '</div>' +
-            '<div class="local-lists-item__name">' + tr('local_lists_edit_menu') + '</div>' +
-          '</div>'
-        );
-        editItem.on('hover:enter', function () {
-          Lampa.Activity.push({ component: 'local_lists_edit', title: tr('local_lists_edit_menu') });
-        });
-
-        var tokenItem = $(
-          '<div class="local-lists-item selector" data-type="input">' +
-            '<div class="local-lists-item__icon">' + ICON_KEY + '</div>' +
-            '<div class="local-lists-item__name">' + tr('local_lists_github_auth') + ' <span class="local-lists-item__val">(' + (token ? '••••••••' : '---') + ')</span></div>' +
-          '</div>'
-        );
-        tokenItem.on('hover:enter', function () {
-          Lampa.Input.edit({
-            title: tr('local_lists_github_auth'),
-            value: Lampa.Storage.get(GIST_TOKEN_KEY, ''),
-            free: true,
-            nosave: true
-          }, function (value) {
-            var trimmed = (value || '').trim();
-            Lampa.Storage.set(GIST_TOKEN_KEY, trimmed);
-            tokenItem.find('.local-lists-item__val').text('(' + (trimmed ? '••••••••' : '---') + ')');
-          });
-        });
-
-        var backupItem = $(
-          '<div class="local-lists-item selector" data-type="button">' +
-            '<div class="local-lists-item__icon">' + ICON_CLOUD_UP + '</div>' +
-            '<div class="local-lists-item__name">' + tr('local_lists_cloud_backup') + '</div>' +
-          '</div>'
-        );
-        backupItem.on('hover:enter', function () {
-          Cloud.backup();
-        });
-
-        var overwriteItem = $(
-          '<div class="local-lists-item selector" data-type="button">' +
-            '<div class="local-lists-item__icon">' + ICON_CLOUD_OVERWRITE + '</div>' +
-            '<div class="local-lists-item__name">' + tr('local_lists_cloud_overwrite') + '</div>' +
-          '</div>'
-        );
-        overwriteItem.on('hover:enter', function () {
-          Cloud.overwrite();
-        });
-
-        var restoreItem = $(
-          '<div class="local-lists-item selector" data-type="button">' +
-            '<div class="local-lists-item__icon">' + ICON_CLOUD_DOWN + '</div>' +
-            '<div class="local-lists-item__name">' + tr('local_lists_cloud_restore') + '</div>' +
-          '</div>'
-        );
-        restoreItem.on('hover:enter', function () {
-          Cloud.restore();
-        });
-
-        var traktItem = $(
-          '<div class="local-lists-item selector" data-type="button">' +
-            '<div class="local-lists-item__icon">' + ICON_IMPORT + '</div>' +
-            '<div class="local-lists-item__name">' + tr('local_lists_import_trakt') + '</div>' +
-          '</div>'
-        );
-        traktItem.on('hover:enter', function () {
-          TraktImport.run();
-        });
-
-        e.body.append(editItem);
-        e.body.append(tokenItem);
-        e.body.append(backupItem);
-        e.body.append(overwriteItem);
-        e.body.append(restoreItem);
-        e.body.append(traktItem);
-
-        Lampa.Settings.update();
-      }
-    });
-  }
+  // 7. Пункт: Імпорт з Trakt.tv
+  Lampa.SettingsApi.addParam({
+    component: 'local_lists_settings',
+    param: {
+      name: 'll_param_trakt',
+      type: 'button'
+    },
+    field: {
+      name: tr('local_lists_import_trakt'),
+      description: 'Імпортувати списки з архіву експорту Trakt.tv (.zip)'
+    },
+    onChange: function () {
+      TraktImport.run();
+    }
+  });
+}
 
   // ── Компоненти інтерфейсу ─────────────────────────────────────────────
   function RootComponent() {
