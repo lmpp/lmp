@@ -12,18 +12,11 @@
   // ── Іконки SVG ────────────────────────────────────────────────────────
   var ICON_SETTINGS = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
   var ICON_KEY = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-  var ICON_CLOUD_UP = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 13v6"/><path d="m15 16-3-3-3 3"/></svg>';
-  var ICON_CLOUD_OVERWRITE = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
-  var ICON_CLOUD_DOWN = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 19v-6"/><path d="m9 16 3 3 3-3"/></svg>';
-  var ICON_IMPORT = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
-  var ICON_STAR_SVG = '<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6162 7.10981L15.8464 7.55198L16.3381 7.63428L22.2841 8.62965C22.8678 8.72736 23.0999 9.44167 22.6851 9.86381L18.4598 14.1641L18.1104 14.5196L18.184 15.0127L19.0748 20.9752C19.1622 21.5606 18.5546 22.002 18.025 21.738L12.6295 19.0483L12.1833 18.8259L11.7372 19.0483L6.34171 21.738C5.81206 22.002 5.20443 21.5606 5.29187 20.9752L6.18264 15.0127L6.25629 14.5196L5.9069 14.1641L1.68155 9.86381C1.26677 9.44167 1.49886 8.72736 2.08255 8.62965L8.02855 7.63428L8.52022 7.55198L8.75043 7.10981L11.5345 1.76241C11.8078 1.23748 12.5589 1.23748 12.8322 1.76241L15.6162 7.10981Z" stroke="currentColor" stroke-width="2.2"></path></svg>';
-  
-  // Іконки для меню редагування списків
-  var ICON_EDIT = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
   var ICON_UP = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
   var ICON_DOWN = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
   var ICON_CHECKED = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3" ry="3"></rect><polyline points="7 12 11 16 17 8"></polyline></svg>';
   var ICON_UNCHECKED = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3" ry="3" opacity="0.4"></rect></svg>';
+  var ICON_STAR_SVG = '<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6162 7.10981L15.8464 7.55198L16.3381 7.63428L22.2841 8.62965C22.8678 8.72736 23.0999 9.44167 22.6851 9.86381L18.4598 14.1641L18.1104 14.5196L18.184 15.0127L19.0748 20.9752C19.1622 21.5606 18.5546 22.002 18.025 21.738L12.6295 19.0483L12.1833 18.8259L11.7372 19.0483L6.34171 21.738C5.81206 22.002 5.20443 21.5606 5.29187 20.9752L6.18264 15.0127L6.25629 14.5196L5.9069 14.1641L1.68155 9.86381C1.26677 9.44167 1.49886 8.72736 2.08255 8.62965L8.02855 7.63428L8.52022 7.55198L8.75043 7.10981L11.5345 1.76241C11.8078 1.23748 12.5589 1.23748 12.8322 1.76241L15.6162 7.10981Z" stroke="currentColor" stroke-width="2.2"></path></svg>';
 
   function addLang() {
     if (!Lampa.Lang || !Lampa.Lang.add) return;
@@ -40,10 +33,10 @@
       },
       local_lists_cloud_backup: { uk: 'Синхронізувати з хмарою (списки + вибране)', ru: 'Синхронизировать с облаком (списки + избранное)', en: 'Sync with Cloud (lists + favorites)' },
       local_lists_cloud_overwrite: { uk: 'Перезаписати списки в хмарі', ru: 'Перезаписать списки в облаке', en: 'Overwrite lists in Cloud' },
-      local_lists_cloud_overwrite_confirm: { uk: 'Перезаписати хмару поточними списками?', ru: 'Перезаписать облако текущими списками?', en: 'Overwrite cloud with current lists?' },
+      local_lists_cloud_overwrite_confirm: { uk: 'Перезаписати хмару поточними списками та закладками?', ru: 'Перезаписать облако текущими списками и закладками?', en: 'Overwrite cloud with current lists and favorites?' },
       local_lists_cloud_overwritten: { uk: 'Дані в хмарі успішно перезаписано', ru: 'Данные в облаке успешно перезаписаны', en: 'Cloud data successfully overwritten' },
       local_lists_cloud_restore: { uk: 'Відновити з хмари', ru: 'Восстановить из облака', en: 'Restore from Cloud' },
-      local_lists_cloud_restore_confirm: { uk: 'Замінити локальні списки даними з хмари?', ru: 'Заменить локальные списки данными из облака?', en: 'Replace local lists with cloud data?' },
+      local_lists_cloud_restore_confirm: { uk: 'Замінити локальні списки та закладки даними з хмари?', ru: 'Заменить локальные списки и закладки данными из облака?', en: 'Replace local lists and favorites with cloud data?' },
       local_lists_cloud_restored: { uk: 'Дані з хмари успішно відновлено', ru: 'Данные из облака успешно восстановлены', en: 'Data successfully restored from cloud' },
       local_lists_create: { uk: 'Створити список', ru: 'Создать список', en: 'Create list' },
       local_lists_new_name: { uk: 'Назва списку', ru: 'Название списка', en: 'List name' },
@@ -86,14 +79,167 @@
   function normalizeCard(raw) {
     var source = raw.movie || raw.card || raw.data || raw || {};
     var poster = source.poster_path || source.img || '';
+    var idNum = isNaN(source.id) ? source.id : parseInt(source.id, 10);
     return {
-      id: source.id,
+      id: idNum,
       method: source.method || (source.first_air_date ? 'tv' : 'movie'),
       title: source.title || source.name || '',
       poster_path: poster,
       img: resolvePoster(poster),
       release_date: source.release_date || source.first_air_date || ''
     };
+  }
+
+  // ── Автоматична нормалізація структури закладок під двигун Lampa ──────
+  function normalizeFavorite(rawFav) {
+    if (!rawFav || typeof rawFav !== 'object') return { card: [] };
+
+    var norm = {
+      card: [],
+      book: [],
+      like: [],
+      history: [],
+      look: [],
+      continued: [],
+      viewed: [],
+      scheduled: [],
+      thrown: []
+    };
+
+    var cardMap = {};
+
+    // 1. Збираємо існуючий масив card, якщо він є
+    if (Array.isArray(rawFav.card)) {
+      rawFav.card.forEach(function (c) {
+        if (c && c.id != null) {
+          var n = normalizeCard(c);
+          cardMap[String(n.id)] = n;
+        }
+      });
+    }
+
+    // 2. Скануємо абсолютно всі гілки (like, book, history і т.д.)
+    Object.keys(rawFav).forEach(function (key) {
+      if (key === 'card') return;
+
+      var val = rawFav[key];
+      if (!Array.isArray(val)) {
+        norm[key] = val;
+        return;
+      }
+
+      norm[key] = [];
+
+      val.forEach(function (item) {
+        if (!item) return;
+
+        if (typeof item === 'object' && item.id != null) {
+          // Якщо всередині гілки лежить повна картка — витягуємо її в cardMap
+          var n = normalizeCard(item);
+          if (!cardMap[String(n.id)]) {
+            cardMap[String(n.id)] = n;
+          }
+          if (norm[key].indexOf(n.id) === -1) {
+            norm[key].push(n.id);
+          }
+        } else {
+          // Якщо це вже числовий ID
+          var idNum = isNaN(item) ? item : parseInt(item, 10);
+          if (norm[key].indexOf(idNum) === -1) {
+            norm[key].push(idNum);
+          }
+        }
+      });
+    });
+
+    // 3. Формуємо обов'язковий системний масив norm.card
+    for (var k in cardMap) {
+      norm.card.push(cardMap[k]);
+    }
+
+    return norm;
+  }
+
+  function countFavCards(fav) {
+    if (!fav || typeof fav !== 'object') return 0;
+    if (Array.isArray(fav.card) && fav.card.length) return fav.card.length;
+    var total = 0;
+    for (var k in fav) {
+      if (Array.isArray(fav[k])) total += fav[k].length;
+    }
+    return total;
+  }
+
+  function getNativeFavorites() {
+    var fav = null;
+
+    try {
+      if (Lampa.Favorite && typeof Lampa.Favorite.all === 'function') {
+        var mem = Lampa.Favorite.all();
+        if (mem && typeof mem === 'object' && Object.keys(mem).length > 0) {
+          fav = JSON.parse(JSON.stringify(mem));
+        }
+      }
+    } catch (e) {}
+
+    if (!fav || Object.keys(fav).length === 0) {
+      var sFav = Lampa.Storage.get('favorite', null);
+      if (typeof sFav === 'string') {
+        try { sFav = JSON.parse(sFav); } catch (e) {}
+      }
+      if (sFav && typeof sFav === 'object' && Object.keys(sFav).length > 0) {
+        fav = sFav;
+      }
+    }
+
+    if (!fav || Object.keys(fav).length === 0) {
+      var sFav2 = Lampa.Storage.get('fav', null);
+      if (typeof sFav2 === 'string') {
+        try { sFav2 = JSON.parse(sFav2); } catch (e) {}
+      }
+      if (sFav2 && typeof sFav2 === 'object' && Object.keys(sFav2).length > 0) {
+        fav = sFav2;
+      }
+    }
+
+    return normalizeFavorite(fav);
+  }
+
+  function updateNativeFavorites(fav) {
+    if (!fav || typeof fav !== 'object') return;
+    var normalized = normalizeFavorite(fav);
+
+    // 1. Оновлюємо оперативну пам'ять Lampa
+    try {
+      if (Lampa.Favorite && typeof Lampa.Favorite.all === 'function') {
+        var inMem = Lampa.Favorite.all();
+        if (inMem && typeof inMem === 'object') {
+          for (var k in inMem) {
+            if (Object.prototype.hasOwnProperty.call(inMem, k)) delete inMem[k];
+          }
+          for (var key in normalized) {
+            if (Object.prototype.hasOwnProperty.call(normalized, key)) inMem[key] = normalized[key];
+          }
+        }
+      }
+    } catch (e) {}
+
+    // 2. Зберігаємо у сховище обидва ключі у нормалізованому вигляді
+    Lampa.Storage.set('favorite', normalized);
+    Lampa.Storage.set('fav', normalized);
+
+    // 3. Зберігаємо стан через нативні методи Lampa
+    try {
+      if (Lampa.Favorite && typeof Lampa.Favorite.save === 'function') {
+        Lampa.Favorite.save();
+      }
+      if (Lampa.Favorite && typeof Lampa.Favorite.init === 'function') {
+        Lampa.Favorite.init();
+      }
+      if (Lampa.Favorite && Lampa.Favorite.listener && typeof Lampa.Favorite.listener.send === 'function') {
+        Lampa.Favorite.listener.send('update', { type: 'all' });
+      }
+    } catch (e) {}
   }
 
   var Lists = {
@@ -198,7 +344,7 @@
     }
   }
 
-  // ── Smart Merge (збереження hidden під час синхронізації) ───────────
+  // ── Smart Merge ────────────────────────────────────────────────────────
   function mergeCardItems(localItems, remoteItems) {
     localItems = Array.isArray(localItems) ? localItems : [];
     remoteItems = Array.isArray(remoteItems) ? remoteItems : [];
@@ -260,37 +406,52 @@
   }
 
   function mergeFavorites(localFav, remoteFav) {
-    localFav = (localFav && typeof localFav === 'object') ? localFav : {};
-    remoteFav = (remoteFav && typeof remoteFav === 'object') ? remoteFav : {};
+    var normL = normalizeFavorite(localFav);
+    var normR = normalizeFavorite(remoteFav);
 
-    var merged = {};
-    var allKeys = Object.keys(localFav).concat(Object.keys(remoteFav));
+    var cardMap = {};
+    var mergedCards = [];
 
-    allKeys.forEach(function (key) {
-      if (merged[key]) return;
-      var lVal = localFav[key];
-      var rVal = remoteFav[key];
-
-      if (Array.isArray(lVal) || Array.isArray(rVal)) {
-        var arrL = Array.isArray(lVal) ? lVal : [];
-        var arrR = Array.isArray(rVal) ? rVal : [];
-        var map = {};
-        var list = [];
-
-        arrR.concat(arrL).forEach(function (item) {
-          if (!item) return;
-          var idKey = (typeof item === 'object') ? (item.id || JSON.stringify(item)) : String(item);
-          if (!map[idKey]) {
-            map[idKey] = true;
-            list.push(item);
-          }
-        });
-        merged[key] = list;
-      } else if (typeof lVal === 'object' && typeof rVal === 'object' && lVal && rVal) {
-        merged[key] = Object.assign({}, rVal, lVal);
+    // 1. Об'єднуємо всі картки фільмів
+    normR.card.concat(normL.card).forEach(function (c) {
+      if (!c || c.id == null) return;
+      var key = String(c.id);
+      if (!cardMap[key]) {
+        cardMap[key] = Object.assign({}, c);
+        mergedCards.push(cardMap[key]);
       } else {
-        merged[key] = lVal !== undefined ? lVal : rVal;
+        Object.assign(cardMap[key], c);
       }
+    });
+
+    var merged = {
+      card: mergedCards
+    };
+
+    var allKeys = Object.keys(normL).concat(Object.keys(normR));
+    var processed = {};
+
+    // 2. Об'єднуємо ID у категоріях
+    allKeys.forEach(function (key) {
+      if (key === 'card' || processed[key]) return;
+      processed[key] = true;
+
+      var arrL = Array.isArray(normL[key]) ? normL[key] : [];
+      var arrR = Array.isArray(normR[key]) ? normR[key] : [];
+
+      var idMap = {};
+      var list = [];
+
+      arrR.concat(arrL).forEach(function (id) {
+        if (id == null) return;
+        var sId = String(id);
+        if (!idMap[sId]) {
+          idMap[sId] = true;
+          list.push(isNaN(id) ? id : parseInt(id, 10));
+        }
+      });
+
+      merged[key] = list;
     });
 
     return merged;
@@ -360,7 +521,11 @@
       this.request('GET', 'https://api.github.com/gists?per_page=100', null, function (res) {
         if (Array.isArray(res)) {
           var found = res.filter(function (g) {
-            return g.files && (g.files['lampa_local_lists.json'] || g.files['lampa_native_favorite.json']);
+            return g.files && (
+              g.files['lampa_local_lists.json'] || 
+              g.files['lampa_native_favorite.json'] || 
+              g.files['local_lists_data.json']
+            );
           })[0];
           if (found) {
             Lampa.Storage.set(GIST_ID_KEY, found.id);
@@ -383,19 +548,31 @@
         var remoteFav = {};
 
         if (gist && gist.files) {
-          if (gist.files['lampa_local_lists.json']) {
-            try { remoteLists = JSON.parse(gist.files['lampa_local_lists.json'].content); } catch (e) {}
+          var fLists = gist.files['lampa_local_lists.json'] || gist.files['local_lists_data.json'];
+          if (fLists) {
+            try { 
+              var parsed = JSON.parse(fLists.content);
+              if (parsed && parsed.ll_data) {
+                remoteLists = parsed.ll_data;
+                if (parsed.lampa_fav && !gist.files['lampa_native_favorite.json']) {
+                  remoteFav = parsed.lampa_fav;
+                }
+              } else if (Array.isArray(parsed)) {
+                remoteLists = parsed;
+              }
+            } catch (e) {}
           }
           if (gist.files['lampa_native_favorite.json']) {
             try { remoteFav = JSON.parse(gist.files['lampa_native_favorite.json'].content); } catch (e) {}
           }
         }
 
+        var localFav = getNativeFavorites();
         var mergedLists = mergeLists(Lists.getAll(), remoteLists);
-        var mergedFav = mergeFavorites(Lampa.Storage.get('favorite', {}), remoteFav);
+        var mergedFav = mergeFavorites(localFav, remoteFav);
 
         Lists.save(mergedLists);
-        Lampa.Storage.set('favorite', mergedFav);
+        updateNativeFavorites(mergedFav);
 
         var data = {
           description: 'Lampa Local Lists & Favorites Sync',
@@ -414,7 +591,7 @@
           function (res) {
             Lampa.Storage.set(GIST_ID_KEY, res.id);
             Lampa.Loading.stop();
-            Lampa.Noty.show('Синхронізовано');
+            Lampa.Noty.show('Синхронізовано: списків — ' + mergedLists.length + ', закладок — ' + countFavCards(mergedFav));
 
             var cur = Lampa.Activity.active();
             if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
@@ -442,7 +619,7 @@
             Lampa.Loading.start();
 
             var currentLists = Lists.getAll();
-            var currentFav = Lampa.Storage.get('favorite', {});
+            var currentFav = getNativeFavorites();
 
             var data = {
               description: 'Lampa Local Lists & Favorites Sync',
@@ -462,7 +639,7 @@
                 function (res) {
                   Lampa.Storage.set(GIST_ID_KEY, res.id);
                   Lampa.Loading.stop();
-                  Lampa.Noty.show(tr('local_lists_cloud_overwritten'));
+                  Lampa.Noty.show(tr('local_lists_cloud_overwritten') + ' (закладок: ' + countFavCards(currentFav) + ')');
                 }
               );
             });
@@ -501,9 +678,21 @@
               var remoteLists = null;
               var remoteFav = null;
 
-              if (gist.files['lampa_local_lists.json']) {
-                try { remoteLists = JSON.parse(gist.files['lampa_local_lists.json'].content); } catch (e) {}
+              var fLists = gist.files['lampa_local_lists.json'] || gist.files['local_lists_data.json'];
+              if (fLists) {
+                try {
+                  var parsed = JSON.parse(fLists.content);
+                  if (parsed && parsed.ll_data) {
+                    remoteLists = parsed.ll_data;
+                    if (parsed.lampa_fav && !gist.files['lampa_native_favorite.json']) {
+                      remoteFav = parsed.lampa_fav;
+                    }
+                  } else if (Array.isArray(parsed)) {
+                    remoteLists = parsed;
+                  }
+                } catch (e) {}
               }
+
               if (gist.files['lampa_native_favorite.json']) {
                 try { remoteFav = JSON.parse(gist.files['lampa_native_favorite.json'].content); } catch (e) {}
               }
@@ -519,16 +708,22 @@
               }
 
               if (remoteFav && typeof remoteFav === 'object') {
-                Lampa.Storage.set('favorite', remoteFav);
+                updateNativeFavorites(remoteFav);
               }
+
+              var countLists = Array.isArray(remoteLists) ? remoteLists.length : 0;
+              var countFav = countFavCards(remoteFav);
 
               Lampa.Loading.stop();
-              Lampa.Noty.show(tr('local_lists_cloud_restored'));
+              Lampa.Noty.show('Відновлено: списків — ' + countLists + ', закладок — ' + countFav + '. Перезавантаження…');
 
-              var cur = Lampa.Activity.active();
-              if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
-                Lampa.Activity.replace();
-              }
+              setTimeout(function () {
+                if (window.location && window.location.reload) {
+                  window.location.reload();
+                } else if (Lampa.Activity && Lampa.Activity.reload) {
+                  Lampa.Activity.reload();
+                }
+              }, 1600);
             });
           }
           Lampa.Controller.toggle(curController);
@@ -798,7 +993,6 @@
       scroll.clear();
       scroll.append(body);
 
-      // Відновлення фокусу на конкретній кнопці після переміщення
       Lampa.Controller.collectionSet(scroll.render());
       var focusTarget = null;
       if (targetFocus) {
@@ -847,7 +1041,6 @@
     this.destroy = function () {
       scroll.destroy();
       html.remove();
-      // Оновити попередній екран при поверненні
       var cur = Lampa.Activity.active();
       if (cur && (cur.component === 'bookmarks' || cur.component === 'local_lists_root')) {
         Lampa.Activity.replace();
@@ -859,129 +1052,121 @@
 
   // ── Налаштування ──────────────────────────────────────────────────────
   function registerSettings() {
-  if (!Lampa.SettingsApi) return;
+    if (!Lampa.SettingsApi) return;
 
-  // 1. Реєструємо головний розділ у Налаштуваннях
-  Lampa.SettingsApi.addComponent({
-    component: 'local_lists_settings',
-    name: tr('local_lists_settings'),
-    icon: ICON_SETTINGS
-  });
+    Lampa.SettingsApi.addComponent({
+      component: 'local_lists_settings',
+      name: tr('local_lists_settings'),
+      icon: ICON_SETTINGS
+    });
 
-  // 2. Пункт: Редагувати списки (порядок, приховування)
-  Lampa.SettingsApi.addParam({
-    component: 'local_lists_settings',
-    param: {
-      name: 'll_param_edit',
-      type: 'button'
-    },
-    field: {
-      name: tr('local_lists_edit_menu'),
-      description: 'Зміна порядку відображення та приховування списків'
-    },
-    onChange: function () {
-      Lampa.Activity.push({
-        component: 'local_lists_edit',
-        title: tr('local_lists_edit_menu')
-      });
-    }
-  });
+    Lampa.SettingsApi.addParam({
+      component: 'local_lists_settings',
+      param: {
+        name: 'll_param_edit',
+        type: 'button'
+      },
+      field: {
+        name: tr('local_lists_edit_menu'),
+        description: 'Зміна порядку відображення та приховування списків'
+      },
+      onChange: function () {
+        Lampa.Activity.push({
+          component: 'local_lists_edit',
+          title: tr('local_lists_edit_menu')
+        });
+      }
+    });
 
-  // 3. Пункт: GitHub Token
-  Lampa.SettingsApi.addParam({
-    component: 'local_lists_settings',
-    param: {
-      name: 'll_param_token',
-      type: 'button'
-    },
-    field: {
-      name: tr('local_lists_github_auth'),
-      description: 'Натисніть, щоб ввести особистий токен GitHub'
-    },
-    onRender: function (item) {
-      // Відображаємо актуальний статус токена
-      var token = Lampa.Storage.get(GIST_TOKEN_KEY, '');
-      var label = token ? '••••••••' : '---';
-      item.find('.settings-param__value').text(label);
-    },
-    onChange: function () {
-      Lampa.Input.edit({
-        title: tr('local_lists_github_auth'),
-        value: Lampa.Storage.get(GIST_TOKEN_KEY, ''),
-        free: true,
-        nosave: true
-      }, function (value) {
-        var trimmed = (value || '').trim();
-        Lampa.Storage.set(GIST_TOKEN_KEY, trimmed);
-        Lampa.Settings.update(); // автоматично оновить напис
-      });
-    }
-  });
+    Lampa.SettingsApi.addParam({
+      component: 'local_lists_settings',
+      param: {
+        name: 'll_param_token',
+        type: 'button'
+      },
+      field: {
+        name: tr('local_lists_github_auth'),
+        description: 'Натисніть, щоб ввести особистий токен GitHub'
+      },
+      onRender: function (item) {
+        var token = Lampa.Storage.get(GIST_TOKEN_KEY, '');
+        var label = token ? '••••••••' : '---';
+        item.find('.settings-param__value').text(label);
+      },
+      onChange: function () {
+        Lampa.Input.edit({
+          title: tr('local_lists_github_auth'),
+          value: Lampa.Storage.get(GIST_TOKEN_KEY, ''),
+          free: true,
+          nosave: true
+        }, function (value) {
+          var trimmed = (value || '').trim();
+          Lampa.Storage.set(GIST_TOKEN_KEY, trimmed);
+          Lampa.Settings.update();
+        });
+      }
+    });
 
-  // 4. Пункт: Синхронізувати з хмарою
-  Lampa.SettingsApi.addParam({
-    component: 'local_lists_settings',
-    param: {
-      name: 'll_param_sync',
-      type: 'button'
-    },
-    field: {
-      name: tr('local_lists_cloud_backup'),
-      description: 'Об\'єднати локальні списки і закладки з хмарою GitHub'
-    },
-    onChange: function () {
-      Cloud.backup();
-    }
-  });
+    Lampa.SettingsApi.addParam({
+      component: 'local_lists_settings',
+      param: {
+        name: 'll_param_sync',
+        type: 'button'
+      },
+      field: {
+        name: tr('local_lists_cloud_backup'),
+        description: 'Об\'єднати локальні списки і закладки з хмарою GitHub'
+      },
+      onChange: function () {
+        Cloud.backup();
+      }
+    });
 
-  // 5. Пункт: Перезаписати в хмарі
-  Lampa.SettingsApi.addParam({
-    component: 'local_lists_settings',
-    param: {
-      name: 'll_param_overwrite',
-      type: 'button'
-    },
-    field: {
-      name: tr('local_lists_cloud_overwrite'),
-      description: 'Замінити всі дані в хмарі поточними локальними списками'
-    },
-    onChange: function () {
-      Cloud.overwrite();
-    }
-  });
+    Lampa.SettingsApi.addParam({
+      component: 'local_lists_settings',
+      param: {
+        name: 'll_param_overwrite',
+        type: 'button'
+      },
+      field: {
+        name: tr('local_lists_cloud_overwrite'),
+        description: 'Замінити всі дані в хмарі поточними локальними списками та закладками'
+      },
+      onChange: function () {
+        Cloud.overwrite();
+      }
+    });
 
-  // 6. Пункт: Відновити з хмари
-  Lampa.SettingsApi.addParam({
-    component: 'local_lists_settings',
-    param: {
-      name: 'll_param_restore',
-      type: 'button'
-    },
-    field: {
-      name: tr('local_lists_cloud_restore'),
-      description: 'Повністю замінити локальні списки даними з хмари'
-    },
-    onChange: function () {
-      Cloud.restore();
-    }
-  });
+    Lampa.SettingsApi.addParam({
+      component: 'local_lists_settings',
+      param: {
+        name: 'll_param_restore',
+        type: 'button'
+      },
+      field: {
+        name: tr('local_lists_cloud_restore'),
+        description: 'Повністю замінити локальні списки та закладки даними з хмари'
+      },
+      onChange: function () {
+        Cloud.restore();
+      }
+    });
 
-  // 7. Пункт: Імпорт з Trakt.tv
-  Lampa.SettingsApi.addParam({
-    component: 'local_lists_settings',
-    param: {
-      name: 'll_param_trakt',
-      type: 'button'
-    },
-    field: {
-      name: tr('local_lists_import_trakt'),
-      description: 'Імпортувати списки з архіву експорту Trakt.tv (.zip)'
-    },
-    onChange: function () {
-      TraktImport.run();
-    }
-  });
-}
+    Lampa.SettingsApi.addParam({
+      component: 'local_lists_settings',
+      param: {
+        name: 'll_param_trakt',
+        type: 'button'
+      },
+      field: {
+        name: tr('local_lists_import_trakt'),
+        description: 'Імпортувати списки з архіву експорту Trakt.tv (.zip)'
+      },
+      onChange: function () {
+        TraktImport.run();
+      }
+    });
+  }
 
   // ── Компоненти інтерфейсу ─────────────────────────────────────────────
   function RootComponent() {
@@ -1506,7 +1691,7 @@
 
         /* Меню налаштувань */
         '.local-lists-settings-list{display:flex !important;flex-direction:column !important;align-items:stretch !important;width:100% !important;min-width:100% !important;box-sizing:border-box !important;padding:1.4em 0 0.3em 0 !important;}' +
-        '.local-lists-item{display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:flex-start !important;width:100% !important;height:3.8em !important;min-height:3.8em !important;padding:0 1.4em !important;margin:0.2em 0 !important;background:transparent !important;border-radius:0.6em !important;box-sizing:border-box !important;cursor:pointer !important;transition:background 0.15s ease !important;}' +
+        '.local-lists-item{display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:flex-start !important;width:100% !important;height:3.8em !important;min-height:3.8em !important;padding:0 1.4em !important;margin:0.2em 0 !important;background:transparent !important;border-radius:0.6em !important;cursor:pointer !important;transition:background 0.15s ease !important;}' +
         '.local-lists-item.focus{background:rgba(255,255,255,0.12) !important;}' +
         '.local-lists-item__icon{display:flex !important;align-items:center !important;justify-content:center !important;margin-right:1.3em !important;width:28px !important;min-width:28px !important;height:28px !important;}' +
         '.local-lists-item__icon svg{width:26px !important;height:26px !important;stroke:#ffffff !important;display:block !important;}' +
